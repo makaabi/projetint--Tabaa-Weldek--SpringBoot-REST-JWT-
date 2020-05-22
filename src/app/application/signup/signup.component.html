@@ -26,4 +26,7 @@
       </div>
     </div>
  <input type="submit" value="Inscription" class="btn btn-success" [disabled]="f.invalid" >
+ <br/><div class="alert alert-danger" *ngIf="erreur">
+    {{ erreur }}
+  </div>
  </form>
