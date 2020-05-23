@@ -1,5 +1,15 @@
 <h1 class="text-center">Créer un compte</h1>
+
    <form (ngSubmit)="signup(f)" #f="ngForm">
+    <div class="form-group ml-4">
+      <label for="mat">
+        Type
+        </label>
+        <select   [(ngModel)]='typeu' name="typeu"  class="form-control" >
+          <option  value="etudiant">etudiant</option>
+          <option value="enseignant">enseignant</option>
+          </select>
+    </div>
     <div class="form-group ml-4">
     <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Nom" required>
     <div class="alert alert-danger" *ngIf="name.invalid && name.touched">le champ nom est obligatoire</div>

@@ -9,14 +9,20 @@ import { LoginComponent } from './application/login/login.component';
 import { SignupComponent } from './application/signup/signup.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth'
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HomeetudComponent } from './application/homeetud/homeetud.component';
+import { HomeensComponent } from './application/homeens/homeens.component';
+import { HomeadmComponent } from './application/homeadm/homeadm.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PagenotfoundComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeetudComponent,
+    HomeensComponent,
+    HomeadmComponent
   ],
   imports: [
     BrowserModule,
