@@ -24,7 +24,10 @@ export class LoginComponent implements OnInit {
     let data = form.value
     this.aus.login(data.email, data.password)
       .then(res => {
-        this.us.redirect(res.user.uid,this.users)
+        let obj:any=this.us.userneeded(res.user.uid,this.users);
+        if(obj)
+        this.us.redirect(obj.type);
+        else this.erreur='compte supprimé';
       })
       .catch(err => this.erreur=err.message)
   }
