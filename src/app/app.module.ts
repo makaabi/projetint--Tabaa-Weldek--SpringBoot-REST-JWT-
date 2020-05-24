@@ -12,7 +12,8 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HomeetudComponent } from './application/homeetud/homeetud.component';
 import { HomeensComponent } from './application/homeens/homeens.component';
-import { HomeadmComponent } from './application/homeadm/homeadm.component'
+import { HomeadmComponent } from './application/homeadm/homeadm.component';
+import { ListusersComponent } from './application/listusers/listusers.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { HomeadmComponent } from './application/homeadm/homeadm.component'
     SignupComponent,
     HomeetudComponent,
     HomeensComponent,
-    HomeadmComponent
+    HomeadmComponent,
+    ListusersComponent
   ],
   imports: [
     BrowserModule,

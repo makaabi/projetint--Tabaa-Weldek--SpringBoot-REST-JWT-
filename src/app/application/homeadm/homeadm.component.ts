@@ -14,7 +14,6 @@ export class HomeadmComponent implements OnInit {
 
   currentadminid:string;
 
-  //currentadminname:string;
   Users:User[];
 
   constructor(private us: UserService) {
@@ -36,9 +35,14 @@ export class HomeadmComponent implements OnInit {
           }
         })
       })
+      
      }
 
-    
+    getadminName(){
+      let fullname:string=this.us.userneeded(this.currentadminid,this.Users).name;
+      
+      return fullname.substring(0,fullname.indexOf(' '));
+    }
 
 
 

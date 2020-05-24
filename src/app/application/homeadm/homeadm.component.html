@@ -18,9 +18,32 @@
        
     </div>
     <div class="main_content">
-        <div class="header">Welcome!! Have a nice day.</div>  
+        <div class="header">Welcome,{{getadminName()}}</div>  
         <div class="info">
-            <div>hello</div>
+            <div>La liste des utilisateurs</div>
+            <table class="table">
+                <thead>
+           
+                <tr>
+                    <th>nom</th>
+                    <th>Email</th>
+                    <th>type utilisateur</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody >
+                    <tr *ngFor="let u of Users">
+                        <td>{{u.name}}</td>
+                        <td>{{u.email}}</td>
+                        <td>{{u.type}}</td>
+                        <td>
+                            <a class="btn btn-danger" role="button" >supprimer</a>
+                        </td>
+                      
+                    </tr>
+                    
+                </tbody>
+            </table>
 
          </div>
     </div>
