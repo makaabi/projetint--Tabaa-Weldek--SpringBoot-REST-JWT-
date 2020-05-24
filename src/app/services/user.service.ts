@@ -28,10 +28,15 @@ export class UserService {
     })
   }
 
-  getAllUsers(){
+  getAllUsersdata(){
     return this.fs.collection('users').valueChanges()
 
   }
+  getAllUsers(){
+    return this.fs.collection('users').snapshotChanges()
+
+  }
+
 
   userneeded(id:string,users):any{
     let obj:any=null;
@@ -41,7 +46,6 @@ export class UserService {
     return obj;
 
   }
-
   
 
   redirect(typeu:string){
