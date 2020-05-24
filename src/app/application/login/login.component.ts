@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import {AuthenService} from 'src/app/services/authen.service';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 import {UserService} from 'src/app/services/user.service';
 import {User} from 'src/app/interfaces/user.interface';
@@ -15,14 +14,13 @@ export class LoginComponent implements OnInit {
   erreur:string='';
    users:any[];
 
-   usersObservable: Subscription;
 
 
 
   constructor(private router: Router,private aus:AuthenService,private us: UserService) { }
 
   ngOnInit() {
-   this.usersObservable= this.us.getAllUsersdata().subscribe(data=>this.users=data)
+ this.us.getAllUsersdata().subscribe(data=>this.users=data)
   }
 
   login(form) {
@@ -37,7 +35,5 @@ export class LoginComponent implements OnInit {
       })
       .catch(err => this.erreur=err.message)
   }
-  ngOnDestroy() {
-    this.usersObservable.unsubscribe()
-  }
+
 }

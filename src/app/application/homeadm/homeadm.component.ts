@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import {User} from 'src/app/interfaces/user.interface';
-import { Subscription } from 'rxjs';
 
 
 
@@ -12,17 +11,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./homeadm.component.css']
 })
 export class HomeadmComponent implements OnInit {
-  usersObservable: Subscription;
 
   currentadminid:string;
-  currentadminname:string="amine";
+
+  //currentadminname:string;
   Users:User[];
 
-  constructor(private us: UserService) { }
+  constructor(private us: UserService) {
+
+   }
 
   ngOnInit() {
     this.us.user.subscribe(user => this.currentadminid=user.uid)
-    this.usersObservable= this.us.getAllUsers().subscribe(
+   this.us.getAllUsers().subscribe(
       data => {
         this.Users = data.map(
           element => {
@@ -35,12 +36,10 @@ export class HomeadmComponent implements OnInit {
           }
         })
       })
-    console.log(this.Users)
-  }
-  ngOnDestroy() {
-    this.usersObservable.unsubscribe()
-  }
-  test(){
+     }
 
-}
+    
+
+
+
 }
