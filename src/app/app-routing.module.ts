@@ -7,6 +7,7 @@ import { SignupComponent } from './application/signup/signup.component';
 import { HomeetudComponent } from './application/homeetud/homeetud.component';
 import { HomeensComponent } from './application/homeens/homeens.component';
 import { HomeadmComponent } from './application/homeadm/homeadm.component'
+import { AdminstatComponent } from './application/adminstat/adminstat.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,9 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'etudiant', component:HomeetudComponent},
   {path:'enseignant', component:HomeensComponent},
+  {path:'adminstat', component:AdminstatComponent},
+
+
   {path:'admin', component:HomeadmComponent},
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'**', component:PagenotfoundComponent}

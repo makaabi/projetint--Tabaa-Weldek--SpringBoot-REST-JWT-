@@ -2,6 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import {User} from 'src/app/interfaces/user.interface';
+import {AuthenService} from 'src/app/services/authen.service';
 
 
 
@@ -16,7 +17,7 @@ export class HomeadmComponent implements OnInit {
 
   Users:User[];
 
-  constructor(private us: UserService) {
+  constructor(private router: Router,private us: UserService,private aus:AuthenService) {
 
    }
 
@@ -44,6 +45,15 @@ export class HomeadmComponent implements OnInit {
       return fullname.substring(0,fullname.indexOf(' '));
     }
 
+  deleteUser(id:string){
+    this.Users=this.us.deleteUserserv(id,this.Users);
+
+  }
+  logout(){
+    this.aus.logout();
+    this.router.navigate(['../home']);
+
+  }
 
 
 }

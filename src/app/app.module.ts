@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HomeetudComponent } from './application/homeetud/homeetud.component';
 import { HomeensComponent } from './application/homeens/homeens.component';
 import { HomeadmComponent } from './application/homeadm/homeadm.component';
-import { ListusersComponent } from './application/listusers/listusers.component'
+import { AdminstatComponent } from './application/adminstat/adminstat.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,7 @@ import { ListusersComponent } from './application/listusers/listusers.component'
     HomeetudComponent,
     HomeensComponent,
     HomeadmComponent,
-    ListusersComponent
+    AdminstatComponent,
   ],
   imports: [
     BrowserModule,

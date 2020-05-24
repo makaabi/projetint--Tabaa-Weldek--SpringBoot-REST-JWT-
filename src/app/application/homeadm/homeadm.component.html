@@ -10,15 +10,17 @@
     <div class="sidebar">
         <h2>Menu</h2>
         <ul>
-            <li><a><i class="fas fa-home"></i>Statistiques</a></li>
-            <li><a ><i class="fas fa-user"></i>Liste des utilisateurs</a></li>
+            <li><a [routerLink]="['../admin']"  ><i class="fas fa-user"></i>Liste des utilisateurs</a></li>
+            <li><a [routerLink]="['../adminstat']" ><i class="fas fa-home"></i>Statistiques</a></li>
             <li><a ><i class="fas fa-address-card"></i>Forum</a></li>
            
         </ul> 
        
     </div>
     <div class="main_content">
-        <div class="header">Welcome,{{getadminName()}}</div>  
+        <div class="header">Welcome,{{getadminName()}}        <button id="logout" class="btn btn-danger" (click)="logout()">deconnection</button>
+        </div>  
+        
         <div class="info">
             <div>La liste des utilisateurs</div>
             <table class="table">
@@ -37,7 +39,7 @@
                         <td>{{u.email}}</td>
                         <td>{{u.type}}</td>
                         <td>
-                            <a class="btn btn-danger" role="button" >supprimer</a>
+                            <a class="btn btn-danger" role="button" (click)="deleteUser(u.id)" >supprimer</a>
                         </td>
                       
                     </tr>
