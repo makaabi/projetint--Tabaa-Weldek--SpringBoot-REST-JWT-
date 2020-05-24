@@ -10,4 +10,17 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class StatService {
 
   constructor(private fs: AngularFirestore,private router: Router) { }
+
+  addStat(id:string,name:string, lien:string){
+    return this.fs.doc('statistique/' + id).set({
+      id,
+      name,
+      lien
+    })
+  }
+
+  getAllStats(){
+    return this.fs.collection('statistique').snapshotChanges()
+
+  }
 }
