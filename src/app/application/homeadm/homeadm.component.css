@@ -62,7 +62,7 @@ body{
 
 .wrapper .main_content{
   width: 100%;
-  margin-left: 200px;
+  margin-left: 180px;
 }
 
 .wrapper .main_content .header{
@@ -72,15 +72,6 @@ body{
   border-bottom: 1px solid #e0e4e8;
 }
 
-.wrapper .main_content .info{
-  margin: 20px;
-  color: #717171;
-  line-height: 25px;
-}
-
-.wrapper .main_content .info div{
-  margin-bottom: 20px;
-}
 
 #logout{
   float:right;

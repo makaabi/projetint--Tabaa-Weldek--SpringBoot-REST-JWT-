@@ -10,10 +10,14 @@ import { SignupComponent } from './application/signup/signup.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage'
+
 import { HomeetudComponent } from './application/homeetud/homeetud.component';
 import { HomeensComponent } from './application/homeens/homeens.component';
 import { HomeadmComponent } from './application/homeadm/homeadm.component';
 import { AdminstatComponent } from './application/adminstat/adminstat.component';
+import { AjoutstatComponent } from './application/ajoutstat/ajoutstat.component';
+import { ListusersComponent } from './application/listusers/listusers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,8 @@ import { AdminstatComponent } from './application/adminstat/adminstat.component'
     HomeensComponent,
     HomeadmComponent,
     AdminstatComponent,
+    AjoutstatComponent,
+    ListusersComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,8 @@ import { AdminstatComponent } from './application/adminstat/adminstat.component'
       }
     ),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule
 
   ],
   providers: [],

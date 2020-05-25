@@ -12,10 +12,10 @@ import {AuthenService} from 'src/app/services/authen.service';
   styleUrls: ['./homeadm.component.css']
 })
 export class HomeadmComponent implements OnInit {
+  Users:User[];
 
   currentadminid:string;
 
-  Users:User[];
 
   constructor(private router: Router,private us: UserService,private aus:AuthenService) {
 
@@ -45,10 +45,7 @@ export class HomeadmComponent implements OnInit {
       return fullname.substring(0,fullname.indexOf(' '));
     }
 
-  deleteUser(id:string){
-    this.Users=this.us.deleteUserserv(id,this.Users);
 
-  }
   logout(){
     this.aus.logout();
     this.router.navigate(['../home']);
