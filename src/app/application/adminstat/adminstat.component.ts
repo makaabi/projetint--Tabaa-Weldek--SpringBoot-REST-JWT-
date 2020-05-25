@@ -17,13 +17,8 @@ export class AdminstatComponent implements OnInit {
     this.st.getAllStats().subscribe(
       data => {
         this.Statistiques = data.map(
-          element => {
-          return {
-            id: element.payload.doc.id,
-            name:element.payload.doc.data()['name'],
-            lien:element.payload.doc.data()['lien']
-          }
-        })
+          element =>new Statistique( element.payload.doc.id,element.payload.doc.data()['name'],element.payload.doc.data()['lien'])
+          )
       })
   }
 
