@@ -27,17 +27,3 @@ div{
 hr{
   background-color: black;
 }
-#addl,button{
-  border-radius: 25px;
-  padding: 10px;
-}
-#round{
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-
-}
-#supp{
-  margin-left:60%;
-  margin-bottom: 30px;
-}

@@ -23,6 +23,9 @@ import { AjoutlogicielComponent } from './application/ajoutlogiciel/ajoutlogicie
 import { StatsComponent } from './application/stats/stats.component';
 import { ViewlogicielsComponent } from './application/viewlogiciels/viewlogiciels.component';
 import { DepotensComponent } from './application/depotens/depotens.component';
+import { ViewlogicielsetudComponent } from './application/viewlogicielsetud/viewlogicielsetud.component';
+import { ViewstatsetudComponent } from './application/viewstatsetud/viewstatsetud.component';
+import { DepotetudComponent } from './application/depotetud/depotetud.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +44,9 @@ import { DepotensComponent } from './application/depotens/depotens.component';
     StatsComponent,
     ViewlogicielsComponent,
     DepotensComponent,
+    ViewlogicielsetudComponent,
+    ViewstatsetudComponent,
+    DepotetudComponent,
   ],
   imports: [
     BrowserModule,

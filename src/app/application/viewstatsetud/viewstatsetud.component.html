@@ -1,0 +1,13 @@
+<app-homeetud></app-homeetud>
+<h3>La liste des statistique</h3>
+
+<ng-container *ngFor="let s of Statistiques">
+
+    <div>
+        <h3>{{s.nom}}</h3>
+        <img [src]="s.lien">
+    </div>
+    <hr/>
+    
+</ng-container>
+

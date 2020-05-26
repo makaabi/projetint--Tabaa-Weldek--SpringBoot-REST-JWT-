@@ -14,7 +14,10 @@ import { ListlogicielsensComponent } from './application/listlogicielsens/listlo
 import { AjoutlogicielComponent } from './application/ajoutlogiciel/ajoutlogiciel.component';
 import { StatsComponent } from './application/stats/stats.component';
 import { ViewlogicielsComponent } from './application/viewlogiciels/viewlogiciels.component';
-
+import { DepotensComponent } from './application/depotens/depotens.component';
+import { ViewlogicielsetudComponent } from './application/viewlogicielsetud/viewlogicielsetud.component';
+import { ViewstatsetudComponent } from './application/viewstatsetud/viewstatsetud.component';
+import { DepotetudComponent } from './application/depotetud/depotetud.component';
 
 
 const routes: Routes = [
@@ -25,12 +28,18 @@ const routes: Routes = [
   {path:'enseignant', component:HomeensComponent},
   {path:'listusers', component:ListusersComponent},
   {path:'adminstat', component:AdminstatComponent},
+  {path:'viewstatsens', component:StatsComponent},
+
   {path:'ajoutstat', component:AjoutstatComponent},
   {path:'logiciels', component:ListlogicielsensComponent},
-  {path:'viewlogiciels', component:ViewlogicielsComponent},
-
+  {path:'viewlogicielsadm', component:ViewlogicielsComponent},
   {path:'ajoutlogiciel', component:AjoutlogicielComponent},
-  {path:'viewstats', component:StatsComponent},
+  {path:'depotens', component:DepotensComponent},
+
+  {path:'viewlogicielsetud', component:ViewlogicielsetudComponent},
+  {path:'viewstatsetud', component:ViewstatsetudComponent},
+  {path:'depotetud', component:DepotetudComponent},
+
 
 
   {path:'admin', component:HomeadmComponent},

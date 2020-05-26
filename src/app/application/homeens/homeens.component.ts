@@ -34,7 +34,7 @@ export class HomeensComponent implements OnInit {
        })
   }
 
-  getadminName(){
+  getensName(){
     let fullname:string=this.us.userneeded(this.currentensid,this.Users).name;
     
     return fullname.substring(0,fullname.indexOf(' '));

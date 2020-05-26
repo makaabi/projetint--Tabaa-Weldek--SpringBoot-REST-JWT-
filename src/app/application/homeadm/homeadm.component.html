@@ -12,8 +12,8 @@
         <ul>
             <li><a [routerLink]="['../listusers']"  ><i class="fas fa-user"></i>Liste des utilisateurs</a></li>
             <li><a [routerLink]="['../adminstat']" ><i class="fas fa-home"></i>Statistiques</a></li>
-            <li><a [routerLink]="['../viewlogiciels']"  >Logiciels</a></li>
-            <li><a [routerLink]="['../viewdocuments']"  >Documents</a></li>
+            <li><a [routerLink]="['../viewlogicielsadm']"  >Logiciels</a></li>
+            <li><a   >Documents</a></li>
 
 
             <li><a ><i class="fas fa-address-card"></i>Forum</a></li>
@@ -22,7 +22,7 @@
        
     </div>
     <div class="main_content">
-        <div class="header">Welcome,{{getadminName()}}        <button id="logout" class="btn btn-danger" (click)="logout()">deconnection</button>
+        <div class="header">Bienvenue,{{getadminName()}}        <button id="logout" class="btn btn-danger" (click)="logout()">deconnection</button>
         </div>  
         
       
