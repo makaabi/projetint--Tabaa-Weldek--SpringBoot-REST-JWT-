@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {Statistique} from 'src/app/interfaces/Statistique';
 
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -14,10 +13,7 @@ export class StatService {
 
   addStat(name:string, image:File){
 
-    
-
-    let id=image.name.concat(image.name.length.toString())   
-    return new Promise((resolve) => {
+        return new Promise((resolve) => {
       let ref = this.str.ref('Statistique/' + image.name)
       ref.put(image).then(() => {
         ref.getDownloadURL().subscribe(photoUrl => {

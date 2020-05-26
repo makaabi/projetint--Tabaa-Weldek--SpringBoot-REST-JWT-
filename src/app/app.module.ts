@@ -18,6 +18,11 @@ import { HomeadmComponent } from './application/homeadm/homeadm.component';
 import { AdminstatComponent } from './application/adminstat/adminstat.component';
 import { AjoutstatComponent } from './application/ajoutstat/ajoutstat.component';
 import { ListusersComponent } from './application/listusers/listusers.component';
+import { ListlogicielsensComponent } from './application/listlogicielsens/listlogicielsens.component';
+import { AjoutlogicielComponent } from './application/ajoutlogiciel/ajoutlogiciel.component';
+import { StatsComponent } from './application/stats/stats.component';
+import { ViewlogicielsComponent } from './application/viewlogiciels/viewlogiciels.component';
+import { DepotensComponent } from './application/depotens/depotens.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,11 @@ import { ListusersComponent } from './application/listusers/listusers.component'
     AdminstatComponent,
     AjoutstatComponent,
     ListusersComponent,
+    ListlogicielsensComponent,
+    AjoutlogicielComponent,
+    StatsComponent,
+    ViewlogicielsComponent,
+    DepotensComponent,
   ],
   imports: [
     BrowserModule,

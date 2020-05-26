@@ -22,7 +22,7 @@ export class AjoutstatComponent implements OnInit {
       let name=(<Statistique>form.value).nom;
       let image = (<HTMLInputElement>this.image.nativeElement).files[0];
       this.st.addStat(name,image);
-      this.router.navigate(['/adminstat']);
+      this.router.navigate(['/adminstat']); 
   }
 
 }

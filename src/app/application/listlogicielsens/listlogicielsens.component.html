@@ -1,0 +1,18 @@
+<app-homeens></app-homeens>
+<h3>La liste des Logiciels</h3>
+<ng-container *ngFor="let l of Logiciels">
+
+    <div>
+        <h3>{{l.nom}}</h3>
+
+        <img id="round" [src]="l.lien">
+        <p>Plateform:{{l.plateform}}</p>
+        <a role="button" class="btn btn-info" [href]="l.lientel"  target="_blank">Télécharger</a>
+        <a id="supp" class="btn btn-danger" role="button" (click)="deleteLog(l.id)" >supprimer</a>
+
+    </div>
+
+    <hr/>
+    
+</ng-container>
+<li><a id="addl" role="button" class="btn btn-success" [routerLink]="['../ajoutlogiciel']" >Ajouter un Logiciel</a></li>
