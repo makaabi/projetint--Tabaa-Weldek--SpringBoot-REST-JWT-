@@ -1,8 +1,13 @@
 <app-homeetud></app-homeetud>
 
-<div>
-    hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>
-    hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>hello<br/>
+<div id="leftdiv">
+    <ng-container *ngFor="let c of Corrections">
+
+        <a [href]="c.lien"  target="_blank">{{c.nom}}</a>
+<p>déposer par {{getEnseignantname(c.ensid)}} </p>
+    </ng-container>
+   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
     
    
    
@@ -12,4 +17,20 @@
 
 <div id="deposerdiv">
 <h5>Déposer un travail</h5>
+<form (ngSubmit)="addTravail(f)" #f="ngForm">
+        
+    <div class="form-group ml-4">
+    <input id="nom" ngModel name="nom" #nom="ngModel" type="text" class="form-control" placeholder="nom fichier" required>
+    <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">le nom de fichier est obligatoire</div>
+    </div>      
+            <div class="form-group ml-4">
+    <input id="file" type="file" ngModel name="file" required #file> <br><br>
+    <input type="submit" value="Déposer" class="btn btn-secondary" [disabled]="f.invalid">
+</div>
+<br>
+<div class="alert alert-success" *ngIf="msgsucc">
+  {{ msgsucc }}
+</div>
+
+</form>
 </div>

@@ -9,35 +9,43 @@
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
 }
-h3{
-  text-align: center;
-  font-family: cursive;
-  font-size: 32px;
-}
-li{
-    margin:20px 185px;
+
+#leftdiv{
+  margin:10px 185px;
+  width:53%;
+  background:lightslategray ;
+    justify-content: center;
+
 
 }
-div{
-  margin:20px 185px;
-  background: lightcyan ;
-  width:100%;
+
+  
+#sideimg{
+position: absolute;
+top:13%;
+left:66.7%;
+  width: 450px;
+  height: 450px;
+  opacity: 0.8;
 
 }
-hr{
-  background-color: black;
-}
-#addl,button{
-  border-radius: 25px;
-  padding: 10px;
-}
-#round{
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
+#deposerdiv{
+  margin-left:67%;
+  width: 32%;
+  overflow: hidden;
+  background: lightyellow;
+  border:solid 1px wheat;
 
+
+  }
+h5{
+  text-decoration: underline;
 }
-#supp{
-  margin-left:60%;
-  margin-bottom: 30px;
+a{
+  color:white;
 }
+a:hover{
+  text-decoration:none ;
+  color:whitesmoke;
+}
+
