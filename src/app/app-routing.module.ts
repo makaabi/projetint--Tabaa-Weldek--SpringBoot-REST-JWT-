@@ -18,6 +18,10 @@ import { DepotensComponent } from './application/depotens/depotens.component';
 import { ViewlogicielsetudComponent } from './application/viewlogicielsetud/viewlogicielsetud.component';
 import { ViewstatsetudComponent } from './application/viewstatsetud/viewstatsetud.component';
 import { DepotetudComponent } from './application/depotetud/depotetud.component';
+import { ForumensComponent } from './application/forumens/forumens.component';
+import { ForumensajoutpubComponent } from './application/forumensajoutpub/forumensajoutpub.component';
+import { PublicationensComponent } from './application/publicationens/publicationens.component';
+import { ForumensajoutcmntComponent } from './application/forumensajoutcmnt/forumensajoutcmnt.component';
 
 
 const routes: Routes = [
@@ -39,6 +43,11 @@ const routes: Routes = [
   {path:'viewlogicielsetud', component:ViewlogicielsetudComponent},
   {path:'viewstatsetud', component:ViewstatsetudComponent},
   {path:'depotetud', component:DepotetudComponent},
+
+  {path:'forumens', component:ForumensComponent},
+  {path:'AjouterPublicationens', component:ForumensajoutpubComponent},
+  {path:'Publicationens/:id', component:PublicationensComponent},
+  {path:'AjouterCommentaireens/:id', component:ForumensajoutcmntComponent},
 
 
 

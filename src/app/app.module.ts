@@ -26,6 +26,11 @@ import { DepotensComponent } from './application/depotens/depotens.component';
 import { ViewlogicielsetudComponent } from './application/viewlogicielsetud/viewlogicielsetud.component';
 import { ViewstatsetudComponent } from './application/viewstatsetud/viewstatsetud.component';
 import { DepotetudComponent } from './application/depotetud/depotetud.component';
+
+import { ForumensComponent } from './application/forumens/forumens.component';
+import { ForumensajoutpubComponent } from './application/forumensajoutpub/forumensajoutpub.component';
+import { PublicationensComponent } from './application/publicationens/publicationens.component';
+import { ForumensajoutcmntComponent } from './application/forumensajoutcmnt/forumensajoutcmnt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +52,10 @@ import { DepotetudComponent } from './application/depotetud/depotetud.component'
     ViewlogicielsetudComponent,
     ViewstatsetudComponent,
     DepotetudComponent,
+    ForumensComponent,
+    ForumensajoutpubComponent,
+    PublicationensComponent,
+    ForumensajoutcmntComponent,
   ],
   imports: [
     BrowserModule,
