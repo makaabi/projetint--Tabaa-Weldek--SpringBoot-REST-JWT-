@@ -47,6 +47,7 @@ export class UserService {
     return obj;
 
   }
+
   
 
   redirect(typeu:string){

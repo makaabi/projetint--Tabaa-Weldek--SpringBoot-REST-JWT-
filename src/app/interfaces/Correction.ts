@@ -2,8 +2,9 @@ export class Correction{
     private _id: string;
     private _nom: string;
     private _lien: string;
-    private _travailid: string;
     private _ensid: string;
+
+    private _travailid: string;
     
 
 
@@ -12,13 +13,14 @@ export class Correction{
 
     
 
-    constructor(id:string,nom:string,lien:string,travailid:string,ensid:string)
+    constructor(id:string,nom:string,lien:string,ensid:string,travailid:string)
     {
         this._id=id;
         this._nom=nom;
         this._lien=lien;
-        this._travailid=travailid;
         this._ensid=ensid;
+        this._travailid=travailid;
+
 
 
 

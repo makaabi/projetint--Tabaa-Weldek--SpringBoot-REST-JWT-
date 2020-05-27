@@ -1,10 +1,10 @@
 <app-homeetud></app-homeetud>
 
 <div id="leftdiv">
-    <ng-container *ngFor="let c of Corrections">
+    <ng-container *ngFor="let co of Corrections">
 
-        <a [href]="c.lien"  target="_blank">{{c.nom}}</a>
-<p>déposer par {{getEnseignantname(c.ensid)}} </p>
+        <a [href]="co.lien"  target="_blank">{{co.nom}}</a>
+    <p>déposer par {{getEnseignantname(co)}}  </p>
     </ng-container>
    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 

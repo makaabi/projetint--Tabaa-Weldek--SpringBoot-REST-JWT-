@@ -26,13 +26,13 @@ export class DepotetudComponent implements OnInit {
   constructor(private dp:DepotService,private us: UserService) { }
 
   ngOnInit() {
-    this.us.user.subscribe(user => this.currentetudid=user.uid);
+  this.us.user.subscribe(user => this.currentetudid=user.uid);
     this.dp.getAllCorrections().subscribe(
       data => {
         this.Corrections = data.map(
           element =>new Correction( 
             element.payload.doc.id,element.payload.doc.data()['name'],element.payload.doc.data()['lien'],
-            element.payload.doc.data()['travailid'],element.payload.doc.data()['ensid'])
+            element.payload.doc.data()['enseignantid'],element.payload.doc.data()['travailid'])
           )
       })
       this.us.getAllUsers().subscribe(
@@ -59,10 +59,10 @@ export class DepotetudComponent implements OnInit {
       this.dp.addTrav(name,file,this.currentetudid);
       this.msgsucc="Travail Ajouté";
   }
-  getEnseignantname(nom:string):string{
-    console.log(this.Corrections)
+  getEnseignantname(C:Correction):string{
+    let name=this.us.userneeded(C.ensid_1,this.Users).name;
+    return name;
 
-    return this.us.userneeded(nom,this.Users).name;
   }
 
 }
