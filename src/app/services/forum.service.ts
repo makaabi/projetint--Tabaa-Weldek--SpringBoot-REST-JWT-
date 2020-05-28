@@ -12,11 +12,12 @@ export class ForumService {
   tabPublication : Publication[] ;
 
   getAllPub(){
-    console.log(this.fs.collection('Publications').doc("BKDtRmtTHJr1w4zqQ6zo").valueChanges);
-    return this.fs.collection('Publications');
+    return this.fs.collection('Publications').snapshotChanges();
 
   }
-  
+  getCmnts(id:string){
+  return this.fs.collection('Publications').doc(id).collection('Commentaires').snapshotChanges();
+  }
 
   chercherPublication(id:string):Publication{
     for(let i = 0;i<this.tabPublication.length;i++){

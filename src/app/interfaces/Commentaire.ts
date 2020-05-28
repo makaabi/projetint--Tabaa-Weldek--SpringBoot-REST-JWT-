@@ -1,9 +1,9 @@
 export class Commentaire{
-    constructor(private _idc:number,private _description:string,private _ownerid: string){}
-    public get idc():number{
+    constructor(private _idc:string,private _description:string,private _ownerid: string){}
+    public get idc():string{
         return this._idc;
     }
-    public set idc(idc:number){
+    public set idc(idc:string){
         this._idc = idc;
     }
     public get description():string{
