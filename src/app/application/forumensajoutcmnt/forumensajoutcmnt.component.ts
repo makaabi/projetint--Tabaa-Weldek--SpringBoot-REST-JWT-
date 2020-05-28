@@ -17,7 +17,7 @@ export class ForumensajoutcmntComponent implements OnInit {
 
   }
   onSubmit(form:NgForm){
-    this.fs.ajouterCommentaire('1',this.idp,form.value['description'],'exp');
+    this.fs.ajouterCommentaire(this.idp,form.value['description'],'exp');
     this.router.navigate(['/forumens']); 
 
   }

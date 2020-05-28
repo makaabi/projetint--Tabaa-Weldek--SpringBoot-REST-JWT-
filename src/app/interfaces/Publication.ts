@@ -1,8 +1,9 @@
 import { Commentaire } from './Commentaire';
 
 export class Publication{
+  
     
-    constructor(private _idp:string,private _titre : string,private _description : string,private _ownerid: string,private _commentaires : Commentaire[]){}
+    constructor(private _idp:string,private _titre : string,private _description : string,private _ownerid: string,private _commentaires: Commentaire[]){}
     public get idp():string{
         return this._idp;
     }
@@ -27,8 +28,11 @@ export class Publication{
     public set ownerid(value: string) {
         this._ownerid = value;
     }
-    public get commentaires():Commentaire[]{
+    public get commentaires(): Commentaire[] {
         return this._commentaires;
+    }
+    public set commentaires(value: Commentaire[]) {
+        this._commentaires = value;
     }
     ngOnInit() {
     }
