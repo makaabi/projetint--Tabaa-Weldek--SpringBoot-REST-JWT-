@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 import {ForumService} from 'src/app/services/forum.service';
 import {Publication} from 'src/app/interfaces/Publication';
-import {Commentaire} from 'src/app/interfaces/Commentaire';
 
 @Component({
   selector: 'app-forumens',
@@ -14,9 +13,21 @@ export class ForumensComponent implements OnInit {
   recherche : string;
   constructor(private us: UserService,private fs:ForumService) { }
 
-  ngOnInit() {
-    this.publications = this.fs.tabPublication;
+ 
+    ngOnInit() {
 
-  }
+      this.fs.getAllPub().snapshotChanges().subscribe(
+        data => {
+          data.map(element=>console.log(element.payload.doc.metadata))
+          this.publications = data.map(
+            element =>new Publication( 
+              element.payload.doc.id,element.payload.doc.data()['titre'],element.payload.doc.data()['description'],
+              element.payload.doc.data()['ownerid'], 
+              null
+              )
+            )
+        })
+    }
+  
  
 }

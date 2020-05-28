@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import {Publication} from 'src/app/interfaces/Publication';
 import {Commentaire} from 'src/app/interfaces/Commentaire';
-
+import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class ForumService {
-  idp : number = 0;
-  idc : number = 0;
-  tabPublication : Publication[] = [
-        new Publication(this.idp++,'1Titre','Premier Publication',[new Commentaire(this.idc++,'Premier Commentaire')]),
-        new Publication(this.idp++,'2Titre','Deuxieme Publication',[new Commentaire(this.idc++,'Premier Commentaire'),
-                                                           new Commentaire(this.idc++,'Deuxieme Commentaire'),
-                                                           new Commentaire(this.idc++,'Troixieme Commentaire')]),
-        new Publication(this.idp++,'3Titre','Troixieme Publication',[new Commentaire(this.idc++,'Premier Commentaire'),
-                                                            new Commentaire(this.idc++,'Deuxieme Commentaire')]),
-      ];
 
+export class ForumService {
+  constructor(private fs: AngularFirestore) { }
+
+  tabPublication : Publication[] ;
+
+  getAllPub(){
+    console.log(this.fs.collection('Publications').doc("BKDtRmtTHJr1w4zqQ6zo").valueChanges);
+    return this.fs.collection('Publications');
+
+  }
   
-  chercherPublication(id:number):Publication{
+
+  chercherPublication(id:string):Publication{
     for(let i = 0;i<this.tabPublication.length;i++){
       if(this.tabPublication[i].idp == id){
         return this.tabPublication[i];
@@ -27,14 +27,25 @@ export class ForumService {
     return null;
   }
 
-  ajouterPulication(titre:string,description:string){
-    let commentaires : Commentaire[] = [];
-    this.tabPublication.push(new Publication(this.idp++,titre,description,commentaires));
+  ajouterPulication(titre:string,description:string,ownerid:string){
+
+    this.fs.collection('Publications').add({
+      titre,
+      description,
+      ownerid
+    })
   }
 
-  ajouterCommentaire(idp : number,description : string){
-    let commentaires : Commentaire[] = this.chercherPublication(idp).commentaires;
-    commentaires.push(new Commentaire(this.idc++,description));
+  ajouterCommentaire(idc:string,idp : string,description : string,ownerid:string){
+    
+    this.fs.collection('Publications/'+idp+'/Commentaires').add({
+   
+        description,
+        ownerid
+      
+    }
+
+    )
+
   }
-  constructor() { }
 }

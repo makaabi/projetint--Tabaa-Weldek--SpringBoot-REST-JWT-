@@ -17,7 +17,7 @@ export class ForumensajoutpubComponent implements OnInit {
   }
   onSubmit(form:NgForm)
   {
-    this.fs.ajouterPulication(form.value['titre'],form.value['description']);
+    this.fs.ajouterPulication(form.value['titre'],form.value['description'],'exp');
     this.router.navigate(['/forumens']); 
   }
 }

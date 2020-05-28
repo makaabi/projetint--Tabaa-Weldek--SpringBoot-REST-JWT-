@@ -8,7 +8,7 @@ import {ForumService} from 'src/app/services/forum.service';
   styleUrls: ['./forumensajoutcmnt.component.css']
 })
 export class ForumensajoutcmntComponent implements OnInit {
-  idp : number;
+  idp : string;
  
   constructor(private activatedRoute : ActivatedRoute,private fs:ForumService,private router:Router) { }
 
@@ -17,7 +17,7 @@ export class ForumensajoutcmntComponent implements OnInit {
 
   }
   onSubmit(form:NgForm){
-    this.fs.ajouterCommentaire(this.idp,form.value['description']);
+    this.fs.ajouterCommentaire('1',this.idp,form.value['description'],'exp');
     this.router.navigate(['/forumens']); 
 
   }

@@ -1,11 +1,12 @@
 import { Commentaire } from './Commentaire';
 
 export class Publication{
-    constructor(private _idp:number,private _titre : string,private _description : string,private _commentaires : Commentaire[]){}
-    public get idp():number{
+    
+    constructor(private _idp:string,private _titre : string,private _description : string,private _ownerid: string,private _commentaires : Commentaire[]){}
+    public get idp():string{
         return this._idp;
     }
-    public set idp(idp:number){
+    public set idp(idp:string){
         this._idp = idp;
     }
     public get titre():string{
@@ -19,6 +20,12 @@ export class Publication{
     }
     public set description(description:string){
         this._description = description;
+    }
+    public get ownerid(): string {
+        return this._ownerid;
+    }
+    public set ownerid(value: string) {
+        this._ownerid = value;
     }
     public get commentaires():Commentaire[]{
         return this._commentaires;

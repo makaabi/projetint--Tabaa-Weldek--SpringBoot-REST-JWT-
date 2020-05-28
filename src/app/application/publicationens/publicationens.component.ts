@@ -10,7 +10,7 @@ import {Publication} from 'src/app/interfaces/Publication';
   styleUrls: ['./publicationens.component.css']
 })
 export class PublicationensComponent implements OnInit {
-  idp : number;
+  idp : string;
   pub : Publication;
   constructor(private activatedRoute : ActivatedRoute,private fs:ForumService) { }
 
