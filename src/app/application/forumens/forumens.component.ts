@@ -1,8 +1,9 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 import {ForumService} from 'src/app/services/forum.service';
 import {Publication} from 'src/app/interfaces/Publication';
 import {Commentaire} from 'src/app/interfaces/Commentaire';
+import { forkJoin } from 'rxjs';
 
 
 @Component({
@@ -11,48 +12,44 @@ import {Commentaire} from 'src/app/interfaces/Commentaire';
   styleUrls: ['./forumens.component.css']
 })
 export class ForumensComponent implements OnInit{
-  publications : Publication[];
-  commentaires : Commentaire[];
+  publications:Publication[] =[];
 
 
   recherche : string;
-  constructor(private us: UserService,private fs:ForumService,private ngZone: NgZone) { }
+  constructor(private us: UserService,private fs:ForumService) { }
  
   ngOnInit()	{
-  this.fs.getAllPub().subscribe(
+    let i=0;
+    this.fs.getAllPub().subscribe(
     data => {
-     
-      this.publications = data.map(
-        element =>
-        new Publication( 
-          element.payload.doc.id,element.payload.doc.data()['titre'],element.payload.doc.data()['description'],
-          element.payload.doc.data()['ownerid'],null)
-          
+      for(let j=0;j<data.length;j++){
+       let commentaires : Commentaire[]=[];
+
+        console.log(data[j].payload.doc.id)
+        let cmntsub=this.fs.getCmnts(data[j].payload.doc.id).subscribe(
+          donnee=>{      
+           commentaires= donnee.map(
+              cmnt=>
+              new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'])
+            )
+            this.publications.push(new Publication( 
+              data[j].payload.doc.id,data[j].payload.doc.data()['titre'],data[j].payload.doc.data()['description'],
+              data[j].payload.doc.data()['ownerid'],commentaires)) 
+
+          }
         )
+        
+       
+        
+          i++;
+      }
+        
+     
     })
-    
+
     }
-    ngDoCheck (){
-        for(let i=0;i<this.publications.length;i++){
-          this.fs.getCmnts(this.publications[i].idp).subscribe(
-            donnee=>{      
-             this.commentaires= donnee.map(
-                cmnt=>
-                new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'])
-              )
-      
-            }
-          )
-          this.publications[i].commentaires= this.commentaires
   
-        }
 
-      
-      
-
-    }
-
-    
- 
+  
 
 }
