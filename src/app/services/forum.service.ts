@@ -10,7 +10,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class ForumService {
   constructor(private fs: AngularFirestore) { }
 
-  tabPublication : Publication[] ;
   publications : Publication[];
 
 
@@ -23,28 +22,23 @@ export class ForumService {
   }
   
 
-  chercherPublication(id:string,tabPublication:Publication[]):Publication{
-    for(let i = 0;i<tabPublication.length;i++){
-      if(tabPublication[i].idp == id){
-        return tabPublication[i];
-      }
-    }
-    return null;
-  }
+ 
 
-  ajouterPulication(titre:string,description:string,ownerid:string){
+  ajouterPulication(titre:string,description:string,ownerid:string,datep:Date){
 
     this.fs.collection('Publications').add({
       titre,
       description,
-      ownerid
+      ownerid,
+      datep
     })
   }
 
-  ajouterCommentaire(idp : string,description : string,ownerid:string){
+  ajouterCommentaire(idp : string,description : string,ownerid:string,datec:Date){
     this.fs.collection('Publications/'+idp+'/Commentaires').add({
         description,
-        ownerid
+        ownerid,
+        datec
       
     }
 

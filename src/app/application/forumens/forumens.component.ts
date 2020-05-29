@@ -3,7 +3,7 @@ import {UserService} from 'src/app/services/user.service';
 import {ForumService} from 'src/app/services/forum.service';
 import {Publication} from 'src/app/interfaces/Publication';
 import {Commentaire} from 'src/app/interfaces/Commentaire';
-import { forkJoin } from 'rxjs';
+import {User} from 'src/app/interfaces/user.interface';
 
 
 @Component({
@@ -12,6 +12,8 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./forumens.component.css']
 })
 export class ForumensComponent implements OnInit{
+  Users:User[];
+
   publications:Publication[] =[];
 
 
@@ -30,11 +32,11 @@ export class ForumensComponent implements OnInit{
           donnee=>{      
            commentaires= donnee.map(
               cmnt=>
-              new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'])
+              new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'],data[j].payload.doc.data()['datec'])
             )
             this.publications.push(new Publication( 
               data[j].payload.doc.id,data[j].payload.doc.data()['titre'],data[j].payload.doc.data()['description'],
-              data[j].payload.doc.data()['ownerid'],commentaires)) 
+              data[j].payload.doc.data()['ownerid'],data[j].payload.doc.data()['datep'],commentaires)) 
 
           }
         )
@@ -43,13 +45,26 @@ export class ForumensComponent implements OnInit{
         
           i++;
       }
-        
-     
     })
+    this.us.getAllUsers().subscribe(
+      data => {
+        this.Users = data.map(
+          element => {
+          return {
+            id: element.payload.doc.id,
+            name:element.payload.doc.data()['name'],
+            type:element.payload.doc.data()['type'],
+            email:element.payload.doc.data()['email'],
+            
+          }
+        })
+      })
 
     }
   
-
+    getcurrName(id:string):string{
+      return this.us.userneeded(id,this.Users).name;
+    }
   
 
 }

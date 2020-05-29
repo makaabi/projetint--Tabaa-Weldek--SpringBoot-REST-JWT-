@@ -1,5 +1,6 @@
 export class Commentaire{
-    constructor(private _idc:string,private _description:string,private _ownerid: string){}
+    
+    constructor(private _idc:string,private _description:string,private _ownerid: string,private _datec: Date){}
     public get idc():string{
         return this._idc;
     }
@@ -18,6 +19,14 @@ export class Commentaire{
     public set ownerid(value: string) {
         this._ownerid = value;
     }
+    public get datec(): Date {
+        return this._datec;
+    }
+    public set datec(value: Date) {
+        this._datec = value;
+    }
+
+    
     ngOnInit() {
     }
 }

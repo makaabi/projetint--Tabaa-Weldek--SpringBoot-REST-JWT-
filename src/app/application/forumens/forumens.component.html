@@ -13,7 +13,11 @@
     <div id="pub" *ngIf="recherche==''||t.titre==recherche||recherche==null">
         <div id="publication" [routerLink]="['/Publicationens',t.idp]">
             <div id="titre">{{t.titre}}</div>
-            <div id="description">{{t.description}}</div>
+            <div id="description">
+                {{getcurrName(t.ownerid)}}<br> {{t.datep.toDate()| date:'dd/MM/yyyy HH:mm'}}<br>                
+                {{t.description}}
+                
+            </div>
             <div id = "Comment">
                 <img  src="../assets/Comment.png" style="position: absolute;align-self: center;">
                 <div id="nbComment">{{t.commentaires.length}}</div>

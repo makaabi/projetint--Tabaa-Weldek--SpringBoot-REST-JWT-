@@ -1,9 +1,10 @@
 import { Commentaire } from './Commentaire';
 
 export class Publication{
+    
   
     
-    constructor(private _idp:string,private _titre : string,private _description : string,private _ownerid: string,private _commentaires: Commentaire[]){}
+    constructor(private _idp:string,private _titre : string,private _description : string,private _ownerid:string,private _datep: Date,private _commentaires: Commentaire[]){}
     public get idp():string{
         return this._idp;
     }
@@ -28,6 +29,15 @@ export class Publication{
     public set ownerid(value: string) {
         this._ownerid = value;
     }
+   
+    public get datep(): Date {
+        return this._datep;
+    }
+    public set datep(value: Date) {
+        this._datep = value;
+    }
+  
+  
     public get commentaires(): Commentaire[] {
         return this._commentaires;
     }
