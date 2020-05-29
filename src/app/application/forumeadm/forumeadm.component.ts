@@ -61,5 +61,5 @@ export class ForumeadmComponent implements OnInit {
     getcurrName(id:string):string{
       return this.us.userneeded(id,this.Users).name;
     }
-
+   
 }

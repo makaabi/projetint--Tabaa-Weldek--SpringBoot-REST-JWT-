@@ -12,12 +12,18 @@
             </div>
         </div>
         <button id="AjoutCom" type="button" class="btn btn-dark" [routerLink]="['/AjouterCommentaireadm',pub.idp]">Ajouter Commentaire</button>
+        <button id="delete" type="button" class="btn btn-danger" (click)="deletePub(pub.idp)" >Supprimer pub</button>
+
     </div>
     <div id="com">
         <div id="commentaire" *ngFor="let t of pub.commentaires">
             {{getcurrName(t.ownerid)}}<br> {{t.datec.toDate()| date:'dd/MM/yyyy HH:mm'}}<br>
             {{t.description}}
+            <button id="delete" type="button" class="btn btn-danger" (click)="deleteCmnt(t,t.idc,pub.idp)" >Supprimer</button>
+
         </div>
     </div>
+
     <button id="return"  type="button" class="btn btn-danger" [routerLink]="['/forumadm']">Retourner</button>
+
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
+
 import {ForumService} from 'src/app/services/forum.service';
 import {Publication} from 'src/app/interfaces/Publication';
 import {Commentaire} from 'src/app/interfaces/Commentaire';
@@ -17,7 +18,7 @@ export class PublicationadmComponent implements OnInit {
 
   publications : Publication[]=[];
 
-  constructor(private activatedRoute : ActivatedRoute,private fs:ForumService,private us: UserService) { }
+  constructor(private activatedRoute : ActivatedRoute,private fs:ForumService,private us: UserService,private router:Router) { }
 
   ngOnInit() {
     this.idp = this.activatedRoute.snapshot.params['id'];
@@ -70,5 +71,12 @@ export class PublicationadmComponent implements OnInit {
   getcurrName(id:string):string{
     return this.us.userneeded(id,this.Users).name;
   }
+  deletePub(id:string){
+    this.publications=this.fs.deletePub(id,this.publications);
+    this.router.navigate(['../forumadm'])
+  }
+  deleteCmnt(cmts:Commentaire[],idc:string,idp:string){
+    cmts=this.fs.deleteCmnt(cmts,idc,idp);
 
+  }
 }

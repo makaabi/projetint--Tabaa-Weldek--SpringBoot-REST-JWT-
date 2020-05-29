@@ -10,7 +10,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class ForumService {
   constructor(private fs: AngularFirestore) { }
 
-  publications : Publication[];
 
 
   getAllPub(){
@@ -44,5 +43,31 @@ export class ForumService {
 
     )
 
+  }
+  deletePub(id:string,publications:Publication[]):Publication[]
+  {
+      let i:number;
+      for(i=0;i<publications.length;i++)
+      {
+        if(id==publications[i].idp)
+        publications = publications.filter(obj => obj !== publications[i]);
+      }
+
+     this.fs.doc(`Publications/${id}`).delete();
+
+      return publications;
+  }
+
+  deleteCmnt(cmts:Commentaire[],idc:string,idp:string):Commentaire[]
+  {
+      let i:number;
+      for(i=0;i<cmts.length;i++)
+      {
+        if(idc==cmts[i].idc)
+        cmts = cmts.filter(obj => obj !== cmts[i]);
+      }
+
+     this.fs.doc(`Publications/${idp}/Commentaires/${idc}`).delete();
+      return cmts;
   }
 }
