@@ -18,11 +18,18 @@ import { DepotensComponent } from './application/depotens/depotens.component';
 import { ViewlogicielsetudComponent } from './application/viewlogicielsetud/viewlogicielsetud.component';
 import { ViewstatsetudComponent } from './application/viewstatsetud/viewstatsetud.component';
 import { DepotetudComponent } from './application/depotetud/depotetud.component';
+
+
 import { ForumensComponent } from './application/forumens/forumens.component';
 import { ForumensajoutpubComponent } from './application/forumensajoutpub/forumensajoutpub.component';
 import { PublicationensComponent } from './application/publicationens/publicationens.component';
 import { ForumensajoutcmntComponent } from './application/forumensajoutcmnt/forumensajoutcmnt.component';
 
+
+import { ForumetudComponent } from './application/forumetud/forumetud.component';
+import { ForumetudajoutpubComponent } from './application/forumetudajoutpub/forumetudajoutpub.component';
+import { ForumetudajoutcmntComponent } from './application/forumetudajoutcmnt/forumetudajoutcmnt.component';
+import { PublicationetudComponent } from './application/publicationetud/publicationetud.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -49,7 +56,12 @@ const routes: Routes = [
   {path:'Publicationens/:id', component:PublicationensComponent},
   {path:'AjouterCommentaireens/:id', component:ForumensajoutcmntComponent},
 
+  {path:'forumetud', component:ForumetudComponent},
+  {path:'AjouterPublicationetud', component:ForumetudajoutpubComponent},
+  {path:'Publicationetud/:id', component:PublicationetudComponent},
+  {path:'AjouterCommentaireetud/:id', component:ForumetudajoutcmntComponent},
 
+  
 
   {path:'admin', component:HomeadmComponent},
   {path:'', redirectTo:'home', pathMatch:'full'},

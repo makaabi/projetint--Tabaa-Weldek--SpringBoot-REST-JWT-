@@ -15,22 +15,36 @@ import { AngularFireStorageModule } from '@angular/fire/storage'
 import { HomeetudComponent } from './application/homeetud/homeetud.component';
 import { HomeensComponent } from './application/homeens/homeens.component';
 import { HomeadmComponent } from './application/homeadm/homeadm.component';
+
 import { AdminstatComponent } from './application/adminstat/adminstat.component';
 import { AjoutstatComponent } from './application/ajoutstat/ajoutstat.component';
 import { ListusersComponent } from './application/listusers/listusers.component';
+
 import { ListlogicielsensComponent } from './application/listlogicielsens/listlogicielsens.component';
 import { AjoutlogicielComponent } from './application/ajoutlogiciel/ajoutlogiciel.component';
 import { StatsComponent } from './application/stats/stats.component';
 import { ViewlogicielsComponent } from './application/viewlogiciels/viewlogiciels.component';
-import { DepotensComponent } from './application/depotens/depotens.component';
+
 import { ViewlogicielsetudComponent } from './application/viewlogicielsetud/viewlogicielsetud.component';
 import { ViewstatsetudComponent } from './application/viewstatsetud/viewstatsetud.component';
+
+
+import { DepotensComponent } from './application/depotens/depotens.component';
 import { DepotetudComponent } from './application/depotetud/depotetud.component';
+
 
 import { ForumensComponent } from './application/forumens/forumens.component';
 import { ForumensajoutpubComponent } from './application/forumensajoutpub/forumensajoutpub.component';
 import { PublicationensComponent } from './application/publicationens/publicationens.component';
 import { ForumensajoutcmntComponent } from './application/forumensajoutcmnt/forumensajoutcmnt.component';
+
+
+import { ForumetudComponent } from './application/forumetud/forumetud.component';
+import { ForumetudajoutpubComponent } from './application/forumetudajoutpub/forumetudajoutpub.component';
+import { ForumetudajoutcmntComponent } from './application/forumetudajoutcmnt/forumetudajoutcmnt.component';
+import { PublicationetudComponent } from './application/publicationetud/publicationetud.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +70,10 @@ import { ForumensajoutcmntComponent } from './application/forumensajoutcmnt/foru
     ForumensajoutpubComponent,
     PublicationensComponent,
     ForumensajoutcmntComponent,
+    ForumetudComponent,
+    ForumetudajoutpubComponent,
+    ForumetudajoutcmntComponent,
+    PublicationetudComponent,
   ],
   imports: [
     BrowserModule,

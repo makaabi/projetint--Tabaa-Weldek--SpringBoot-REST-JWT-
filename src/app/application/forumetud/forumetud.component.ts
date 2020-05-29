@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {UserService} from 'src/app/services/user.service';
 import {ForumService} from 'src/app/services/forum.service';
 import {Publication} from 'src/app/interfaces/Publication';
@@ -7,19 +7,17 @@ import {User} from 'src/app/interfaces/user.interface';
 
 
 @Component({
-  selector: 'app-forumens',
-  templateUrl: './forumens.component.html',
-  styleUrls: ['./forumens.component.css']
+  selector: 'app-forumetud',
+  templateUrl: './forumetud.component.html',
+  styleUrls: ['./forumetud.component.css']
 })
-export class ForumensComponent implements OnInit{
+export class ForumetudComponent implements OnInit {
   Users:User[];
 
   publications:Publication[] =[];
 
-
-  recherche : string;
   constructor(private us: UserService,private fs:ForumService) { }
- 
+
   ngOnInit()	{
     let i=0;
     this.fs.getAllPub().subscribe(
@@ -65,6 +63,5 @@ export class ForumensComponent implements OnInit{
     getcurrName(id:string):string{
       return this.us.userneeded(id,this.Users).name;
     }
-  
 
 }
