@@ -44,6 +44,11 @@ import { ForumetudajoutpubComponent } from './application/forumetudajoutpub/foru
 import { ForumetudajoutcmntComponent } from './application/forumetudajoutcmnt/forumetudajoutcmnt.component';
 import { PublicationetudComponent } from './application/publicationetud/publicationetud.component';
 
+import { ForumeadmComponent } from './application/forumeadm/forumeadm.component';
+import { ForumeadmajoutpubComponent } from './application/forumeadmajoutpub/forumeadmajoutpub.component';
+import { ForumadmajoutcmntComponent } from './application/forumadmajoutcmnt/forumadmajoutcmnt.component';
+import { PublicationadmComponent } from './application/publicationadm/publicationadm.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +79,10 @@ import { PublicationetudComponent } from './application/publicationetud/publicat
     ForumetudajoutpubComponent,
     ForumetudajoutcmntComponent,
     PublicationetudComponent,
+    ForumeadmComponent,
+    ForumeadmajoutpubComponent,
+    ForumadmajoutcmntComponent,
+    PublicationadmComponent,
   ],
   imports: [
     BrowserModule,

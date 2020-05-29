@@ -31,6 +31,12 @@ import { ForumetudajoutpubComponent } from './application/forumetudajoutpub/foru
 import { ForumetudajoutcmntComponent } from './application/forumetudajoutcmnt/forumetudajoutcmnt.component';
 import { PublicationetudComponent } from './application/publicationetud/publicationetud.component';
 
+import { ForumeadmComponent } from './application/forumeadm/forumeadm.component';
+import { ForumeadmajoutpubComponent } from './application/forumeadmajoutpub/forumeadmajoutpub.component';
+import { ForumadmajoutcmntComponent } from './application/forumadmajoutcmnt/forumadmajoutcmnt.component';
+import { PublicationadmComponent } from './application/publicationadm/publicationadm.component';
+
+
 const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
@@ -61,6 +67,10 @@ const routes: Routes = [
   {path:'Publicationetud/:id', component:PublicationetudComponent},
   {path:'AjouterCommentaireetud/:id', component:ForumetudajoutcmntComponent},
 
+  {path:'forumadm', component:ForumeadmComponent},
+  {path:'AjouterPublicationadm', component:ForumeadmajoutpubComponent},
+  {path:'Publicationadm/:id', component:PublicationadmComponent},
+  {path:'AjouterCommentaireadm/:id', component:ForumadmajoutcmntComponent},
   
 
   {path:'admin', component:HomeadmComponent},
