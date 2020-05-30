@@ -48,8 +48,11 @@ import { ForumeadmComponent } from './application/forumeadm/forumeadm.component'
 import { ForumeadmajoutpubComponent } from './application/forumeadmajoutpub/forumeadmajoutpub.component';
 import { ForumadmajoutcmntComponent } from './application/forumadmajoutcmnt/forumadmajoutcmnt.component';
 import { PublicationadmComponent } from './application/publicationadm/publicationadm.component';
+
 import { QcmensComponent } from './application/qcmens/qcmens.component';
 import { CreerqcmComponent } from './application/creerqcm/creerqcm.component';
+import { AjouterqsComponent } from './application/ajouterqs/ajouterqs.component';
+import { QcmComponent } from './application/qcm/qcm.component';
 
 
 @NgModule({
@@ -87,6 +90,8 @@ import { CreerqcmComponent } from './application/creerqcm/creerqcm.component';
     PublicationadmComponent,
     QcmensComponent,
     CreerqcmComponent,
+    AjouterqsComponent,
+    QcmComponent,
   ],
   imports: [
     BrowserModule,

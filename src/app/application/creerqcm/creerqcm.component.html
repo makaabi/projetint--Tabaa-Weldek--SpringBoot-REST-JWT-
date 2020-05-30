@@ -1,53 +1,18 @@
 <app-homeens></app-homeens>
 <div id="MainContainer">
-    <h1>Creer Qcm</h1>
-    <div class="container">
-        <form >
-        
-    
-         <div class="form-group">
-            <label for="nomqcm">
-            Nom QCM:
-            </label>
-            <input name="nomqcm"   id="nomqcm" [(ngModel)]="qcm.nom"  type="text"   class="form-control"  placeholder="nom Qcm">
-        </div>
-        
-        
-        
-        <div class="container" style="width:auto; border: 1px solid red;border-radius: 5px;padding-bottom:10px ;"> 
-        <div class="form-group">
-            <label for="ques">
-            Question:
-            </label>
-            <input name="ques"   id="ques" [(ngModel)]="question.question"  type="text"  #ques="ngModel" class="form-control"  placeholder="tapez une question" required>
-            
-        </div>
-        
-        <div class="form-group" style="position: relative;">
-            <label for="prop">
-            propostion:
-            </label>
-            <input style="width: 50%;" name="prop" #pro="ngModel"  id="prop" [(ngModel)]="prop"  type="text"   class="form-control"  placeholder="tapez une propostion" required>
-        
-            <button  (click)="onAjouterProp()" title="autre proposition">ajouter </button>
-        </div>
-        
-        <div class="form-group" style="position: relative;">
-            <label for="rep">
-            reponse :
-            </label>
-            <input style="width: 50%;" name="rep"   id="nomques" [(ngModel)]="rep"  type="text"   class="form-control"  placeholder="tapez une reponse">
-            <button  (click)="onAjouterRep()" >ajouter </button>
-        </div>
-        
-        
-        <button  (click)="onAjouteq()"  class="container">ajouter une autre question </button>
-        
-        
-        </div>
-        <br>
-        <button  (click)="onAjoute()" >Créer Qcm </button>
-        
+    <h1 align="center">Ajouter Un QCM</h1>
+    <div id="publication">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">     
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input id="nom" name="nom" type="text" [(ngModel)]="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="matiere">Matiere</label>
+                <input id="matiere" name="matiere" type="text" [(ngModel)]="matiere" required>
+            </div>
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Créer</button>
         </form>
-        </div>
+        <button type="button" class="btn btn-danger" [routerLink]="['/QCMens']">Retourner</button>
+    </div>
 </div>

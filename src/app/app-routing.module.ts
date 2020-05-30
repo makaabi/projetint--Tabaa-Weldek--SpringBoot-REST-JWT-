@@ -38,6 +38,8 @@ import { PublicationadmComponent } from './application/publicationadm/publicatio
 
 import { QcmensComponent } from './application/qcmens/qcmens.component';
 import { CreerqcmComponent } from './application/creerqcm/creerqcm.component';
+import { AjouterqsComponent } from './application/ajouterqs/ajouterqs.component';
+import { QcmComponent } from './application/qcm/qcm.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -76,7 +78,10 @@ const routes: Routes = [
   
   {path:'QCMens', component:QcmensComponent},
   {path:'creerQCM', component:CreerqcmComponent},
-  
+  {path:'Ajouterqs/:id', component:AjouterqsComponent},
+  {path:'qcm/:id', component:QcmComponent},
+
+
 
   {path:'admin', component:HomeadmComponent},
   {path:'', redirectTo:'home', pathMatch:'full'},

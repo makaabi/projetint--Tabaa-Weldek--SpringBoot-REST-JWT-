@@ -1,13 +1,10 @@
 import { Question } from './Question';
 export class Qcm {
 
-constructor(private _id: string,private _nom: string,private _questions: Question[],private _nbrq: number){}
-public get nbrq(): number {
-    return this._nbrq;
-}
-public set nbrq(value: number) {
-    this._nbrq = value;
-}
+
+
+constructor(private _id: string,private _nom:string,private _matiere: string,private _ensid: string,private _dateqcm: string,private _questions: Question[]){}
+
 public get questions(): Question[] {
     return this._questions;
 }
@@ -26,6 +23,23 @@ public get id(): string {
 public set id(value: string) {
     this._id = value;
 }
-
+public get ensid(): string {
+    return this._ensid;
+}
+public set ensid(value: string) {
+    this._ensid = value;
+}
+public get dateqcm(): string {
+    return this._dateqcm;
+}
+public set dateqcm(value: string) {
+    this._dateqcm = value;
+}
+public get matiere(): string {
+    return this._matiere;
+}
+public set matiere(value: string) {
+    this._matiere = value;
+}
 
 }

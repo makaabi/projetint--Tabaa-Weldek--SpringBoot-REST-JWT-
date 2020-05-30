@@ -3,14 +3,15 @@
     <h1>les Qcms</h1>
     <button id="AjoutQCM" type="button" class="btn btn-primary" [routerLink]="['/creerQCM']">Ajouter QCM</button>
 
-            <div id="Qcm" >
-                    <ul>
-                    <li  *ngFor="let t of tab" class="list-group-item"  >
-                    id Qcm: {{t.id}}<br>
-                    Nom Qcm : {{t.nom}}<br>
-                    nombre de questions: {{t.nbrq}}<br>
-                    <button class="btn btn-info">passer Qcm </button> 
-                    </li>
-                     </ul>
+            <div id="Qcm" *ngFor="let q of QCMs" class="list-group-item" [routerLink]="['/qcm',q.id]" >
+                    Nom Qcm : {{q.nom}}<br>
+                    Matiere : {{q.matiere}}<br>
+                    Date : {{q.dateqcm.toDate()| date:'dd/MM/yyyy'}}<br>
+                    Créer par : {{getcurrName(q.ensid)}}<br>
+
+
+                    nombre de questions: {{q.questions.length}}<br>
+                    <button id="AjoutQs" type="button" class="btn btn-dark" [routerLink]="['/Ajouterqs',q.id]">Ajouter Question</button>
+
          </div>
 </div>
