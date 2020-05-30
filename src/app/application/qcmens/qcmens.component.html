@@ -1,0 +1,16 @@
+<app-homeens></app-homeens>
+<div id="MainContainer">
+    <h1>les Qcms</h1>
+    <button id="AjoutQCM" type="button" class="btn btn-primary" [routerLink]="['/creerQCM']">Ajouter QCM</button>
+
+            <div id="Qcm" >
+                    <ul>
+                    <li  *ngFor="let t of tab" class="list-group-item"  >
+                    id Qcm: {{t.id}}<br>
+                    Nom Qcm : {{t.nom}}<br>
+                    nombre de questions: {{t.nbrq}}<br>
+                    <button class="btn btn-info">passer Qcm </button> 
+                    </li>
+                     </ul>
+         </div>
+</div>

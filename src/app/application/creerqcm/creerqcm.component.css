@@ -1,0 +1,9 @@
+#MainContainer{
+    display : flex;
+    flex-direction: column;
+    background-color:rgb(240, 230, 209);
+    margin-left : 15vw;
+    margin-top:10vh;
+    align-items: center;
+    font-size: 1vw;
+}

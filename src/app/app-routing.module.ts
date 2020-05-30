@@ -36,6 +36,8 @@ import { ForumeadmajoutpubComponent } from './application/forumeadmajoutpub/foru
 import { ForumadmajoutcmntComponent } from './application/forumadmajoutcmnt/forumadmajoutcmnt.component';
 import { PublicationadmComponent } from './application/publicationadm/publicationadm.component';
 
+import { QcmensComponent } from './application/qcmens/qcmens.component';
+import { CreerqcmComponent } from './application/creerqcm/creerqcm.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -71,6 +73,9 @@ const routes: Routes = [
   {path:'AjouterPublicationadm', component:ForumeadmajoutpubComponent},
   {path:'Publicationadm/:id', component:PublicationadmComponent},
   {path:'AjouterCommentaireadm/:id', component:ForumadmajoutcmntComponent},
+  
+  {path:'QCMens', component:QcmensComponent},
+  {path:'creerQCM', component:CreerqcmComponent},
   
 
   {path:'admin', component:HomeadmComponent},
