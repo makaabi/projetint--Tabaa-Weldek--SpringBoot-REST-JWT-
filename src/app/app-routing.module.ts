@@ -41,6 +41,10 @@ import { CreerqcmComponent } from './application/creerqcm/creerqcm.component';
 import { AjouterqsComponent } from './application/ajouterqs/ajouterqs.component';
 import { QcmComponent } from './application/qcm/qcm.component';
 
+import { QcmetudComponent } from './application/qcmetud/qcmetud.component';
+import { RepondreqcmComponent } from './application/repondreqcm/repondreqcm.component';
+
+
 const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
@@ -81,6 +85,8 @@ const routes: Routes = [
   {path:'Ajouterqs/:id', component:AjouterqsComponent},
   {path:'qcm/:id', component:QcmComponent},
 
+  {path:'QCMetud', component:QcmetudComponent},
+  {path:'repondreqcm/:id', component:RepondreqcmComponent},
 
 
   {path:'admin', component:HomeadmComponent},

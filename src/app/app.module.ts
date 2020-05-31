@@ -54,6 +54,9 @@ import { CreerqcmComponent } from './application/creerqcm/creerqcm.component';
 import { AjouterqsComponent } from './application/ajouterqs/ajouterqs.component';
 import { QcmComponent } from './application/qcm/qcm.component';
 
+import { QcmetudComponent } from './application/qcmetud/qcmetud.component';
+import { RepondreqcmComponent } from './application/repondreqcm/repondreqcm.component';
+
 
 @NgModule({
   declarations: [
@@ -92,6 +95,8 @@ import { QcmComponent } from './application/qcm/qcm.component';
     CreerqcmComponent,
     AjouterqsComponent,
     QcmComponent,
+    QcmetudComponent,
+    RepondreqcmComponent,
   ],
   imports: [
     BrowserModule,
