@@ -3,11 +3,12 @@ import {Document} from 'src/app/interfaces/Document';
 import {DocumentService} from 'src/app/services/document.service';
 import { UserService } from 'src/app/services/user.service';
 @Component({
-  selector: 'app-documentetud',
-  templateUrl: './documentetud.component.html',
-  styleUrls: ['./documentetud.component.css']
+  selector: 'app-documentadm',
+  templateUrl: './documentadm.component.html',
+  styleUrls: ['./documentadm.component.css']
 })
-export class DocumentetudComponent implements OnInit {
+export class DocumentadmComponent implements OnInit {
+
   Documents:Document[];
 
   constructor(private ds:DocumentService,private us: UserService) { }
@@ -32,6 +33,5 @@ export class DocumentetudComponent implements OnInit {
           console.log(this.Documents)
       })
   }
-
 
 }

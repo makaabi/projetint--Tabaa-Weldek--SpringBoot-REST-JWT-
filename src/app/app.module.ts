@@ -60,7 +60,9 @@ import { RepondreqcmComponent } from './application/repondreqcm/repondreqcm.comp
 
 import { AjouterdocumentComponent } from './application/ajouterdocument/ajouterdocument.component';
 import { DocumentensComponent } from './application/documentens/documentens.component';
+
 import { DocumentetudComponent } from './application/documentetud/documentetud.component';
+import { DocumentadmComponent } from './application/documentadm/documentadm.component';
 
 
 @NgModule({
@@ -105,6 +107,7 @@ import { DocumentetudComponent } from './application/documentetud/documentetud.c
     AjouterdocumentComponent,
     DocumentensComponent,
     DocumentetudComponent,
+    DocumentadmComponent,
   ],
   imports: [
     BrowserModule,

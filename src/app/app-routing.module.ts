@@ -47,6 +47,8 @@ import { RepondreqcmComponent } from './application/repondreqcm/repondreqcm.comp
 import { AjouterdocumentComponent } from './application/ajouterdocument/ajouterdocument.component';
 import { DocumentensComponent } from './application/documentens/documentens.component';
 
+import { DocumentetudComponent } from './application/documentetud/documentetud.component';
+import { DocumentadmComponent } from './application/documentadm/documentadm.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -93,6 +95,9 @@ const routes: Routes = [
 
   {path:'ajoutdocument', component:AjouterdocumentComponent},
   {path:'documentsens', component:DocumentensComponent},
+
+  {path:'documentsetud', component:DocumentetudComponent},
+  {path:'documentsadmin', component:DocumentadmComponent},
 
 
 
