@@ -1,0 +1,45 @@
+<app-homeens></app-homeens>
+<h3>Ajouter un Document</h3>
+
+<div class="form">
+    <form (ngSubmit)="addDocument(f)" #f="ngForm">
+        
+        <div class="form-group ml-4">
+        <input id="nom" ngModel name="nom" #nom="ngModel" type="text" class="form-control" placeholder="Nom" required>
+        <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched">le nom est obligatoire</div>
+        </div>
+        
+            <div class="form-group ml-4">
+                <input id="institut" ngModel name="institut" #institut="ngModel" type="text" class="form-control" placeholder="Institut" required>
+                <div class="alert alert-danger" *ngIf="institut.invalid && institut.touched">le nom de institut est obligatoire</div>
+            </div>
+            <div class="form-group ml-4">
+                <input id="branch" ngModel name="branch" #branch="ngModel" type="text" class="form-control" placeholder="Branch" required>
+                <div class="alert alert-danger" *ngIf="branch.invalid && branch.touched">le branch est obligatoire</div>
+            </div>
+            <div class="form-group ml-4">
+                <input id="matiere" ngModel name="matiere" #matiere="ngModel" type="text" class="form-control" placeholder="Matière" required>
+                <div class="alert alert-danger" *ngIf="matiere.invalid && matiere.touched">nom de la Matière est obligatoire</div>
+            </div>
+            <div class="form-group ml-4">
+                <label for="typed">
+                    Type document
+                    </label>
+                    <select   [(ngModel)]='typed' name="typed"  class="form-control" >
+                      <option  value="TP">TP</option>
+                      <option  value="TD">TD</option>
+                      <option  value="Cours">Cours</option>
+                      <option  value="Devoir">Devoir</option> 
+                      <option  value="Correction">Correction</option>
+                      <option  value="Rapport">Rapport</option>
+
+
+                      </select>
+            </div>
+                <div class="form-group ml-4">
+        <input id="file" type="file" ngModel name="file" required #file> <br><br>
+        <input type="submit" value="Ajouter" class="btn btn-primary" [disabled]="f.invalid">
+    </div>
+
+    </form>
+ </div>

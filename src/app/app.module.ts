@@ -58,6 +58,11 @@ import { QcmetudComponent } from './application/qcmetud/qcmetud.component';
 import { RepondreqcmComponent } from './application/repondreqcm/repondreqcm.component';
 
 
+import { AjouterdocumentComponent } from './application/ajouterdocument/ajouterdocument.component';
+import { DocumentensComponent } from './application/documentens/documentens.component';
+import { DocumentetudComponent } from './application/documentetud/documentetud.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,6 +102,9 @@ import { RepondreqcmComponent } from './application/repondreqcm/repondreqcm.comp
     QcmComponent,
     QcmetudComponent,
     RepondreqcmComponent,
+    AjouterdocumentComponent,
+    DocumentensComponent,
+    DocumentetudComponent,
   ],
   imports: [
     BrowserModule,

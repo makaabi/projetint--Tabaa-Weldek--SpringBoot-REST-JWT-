@@ -1,0 +1,16 @@
+<app-homeens></app-homeens>
+<h3>La liste des Documents</h3>
+<ng-container *ngFor="let d of Documents">
+
+    <div>
+        <h3>{{d.nom}}</h3>
+
+        
+        <a role="button" class="btn btn-info" [href]="d.lien"  target="_blank">Consulter</a>
+        <a id="supp" class="btn btn-danger" role="button" (click)="deleteDocument(d.id)" >supprimer</a>
+    </div>
+
+    <hr/>
+    
+</ng-container>
+<li><a id="add" role="button" class="btn btn-success" [routerLink]="['../ajoutdocument']" >Ajouter un document</a></li>
