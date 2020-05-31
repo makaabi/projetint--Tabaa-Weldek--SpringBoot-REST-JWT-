@@ -12,6 +12,9 @@ export class RepondreqcmComponent implements OnInit {
   idqcm : string;
   qcm : Qcm;
   QCMs:Qcm[]=[];
+  reponses:string[]=[];
+  score:number=0;
+  show:boolean=false;
 
     constructor(private activatedRoute : ActivatedRoute,private qs: QcmService) { }
 
@@ -21,18 +24,16 @@ export class RepondreqcmComponent implements OnInit {
       data => {
         for(let j=0;j<data.length;j++){
          let questions : Question[]=[];
-  
-          console.log(data[j].payload.doc.id)
-          this.qs.getQuestions(data[j].payload.doc.id).subscribe(
+            this.qs.getQuestions(data[j].payload.doc.id).subscribe(
             donnee=>{      
               questions= donnee.map(
                 qs=>
                 new Question(qs.payload.doc.id,
                   qs.payload.doc.data()['question'],
                   qs.payload.doc.data()['reponse'],
-                  qs.payload.doc.data()['proposition1'],
-                  qs.payload.doc.data()['proposition2'],
-                  qs.payload.doc.data()['proposition3'])
+                  qs.payload.doc.data()['a'],
+                  qs.payload.doc.data()['b'],
+                  qs.payload.doc.data()['c'])
               )
               let qcm:Qcm=new Qcm( 
                 data[j].payload.doc.id,
@@ -42,6 +43,7 @@ export class RepondreqcmComponent implements OnInit {
                 data[j].payload.doc.data()['dateqcm'],
                 questions);
                 this.QCMs.push(qcm) ;
+                console.log(this.QCMs);
                 if(data[j].payload.doc.id==this.idqcm)
                 {
                   this.qcm=qcm;
@@ -55,6 +57,22 @@ export class RepondreqcmComponent implements OnInit {
           
         }
       });
+
+  }
+  calScore(){
+    this.show=true;
+    this.score=0;
+    console.log(this.qcm.questions,this.reponses)
+
+    for(let i:number=0;i<this.qcm.questions.length;i++){
+      if(this.qcm.questions[i].reponse==this.reponses[i])
+      {
+        console.log(this.qcm.questions[i].reponse,this.reponses[i])
+        this.score++;
+
+      }
+
+    }
 
   }
 }

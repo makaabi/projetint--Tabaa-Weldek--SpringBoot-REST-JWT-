@@ -30,9 +30,9 @@ export class QcmComponent implements OnInit {
                 new Question(qs.payload.doc.id,
                   qs.payload.doc.data()['question'],
                   qs.payload.doc.data()['reponse'],
-                  qs.payload.doc.data()['proposition1'],
-                  qs.payload.doc.data()['proposition2'],
-                  qs.payload.doc.data()['proposition3'])
+                  qs.payload.doc.data()['a'],
+                  qs.payload.doc.data()['b'],
+                  qs.payload.doc.data()['c'])
               )
               let qcm:Qcm=new Qcm( 
                 data[j].payload.doc.id,
@@ -48,7 +48,7 @@ export class QcmComponent implements OnInit {
                   console.log(this.qcm)
                 }
                 
-  
+  console.log(questions)
             }
           )
           

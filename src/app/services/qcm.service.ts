@@ -11,29 +11,29 @@ export class QcmService {
 
   constructor(private fs: AngularFirestore) { }
   getAllQCM(){
-    return this.fs.collection('QCM').snapshotChanges();
+    return this.fs.collection('Qcms').snapshotChanges();
 
   }
   getQuestions(id:string){
-    return this.fs.collection('QCM').doc(id).collection('Questions').snapshotChanges();
+    return this.fs.collection('Qcms').doc(id).collection('Questions').snapshotChanges();
   }
   
   CreerQCm(nom:string,matiere:string,enseignantid:string,dateqcm:Date){
 
-    this.fs.collection('QCM').add({
+    this.fs.collection('Qcms').add({
       nom,
       matiere,
       enseignantid,
       dateqcm
     })
   }
-  ajouterQuestion(idqcm : string,question : string,reponse:string,proposition1:string,proposition2:string,proposition3:string){
-    this.fs.collection('QCM/'+idqcm+'/Questions').add({
+  ajouterQuestion(idqcm : string,question : string,reponse:string,a:string,b:string,c:string){
+    this.fs.collection('Qcms/'+idqcm+'/Questions').add({
       question,
       reponse,
-      proposition1,
-      proposition2,
-      proposition3
+      a,
+      b,
+      c
       
     }
 

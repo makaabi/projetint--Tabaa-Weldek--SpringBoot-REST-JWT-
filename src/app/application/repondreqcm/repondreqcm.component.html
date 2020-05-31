@@ -4,15 +4,21 @@
             <div id="titre">
                 {{qcm.nom}}</div>
                 <div id="question" *ngFor="let q of qcm.questions; let i = index">
-                   {{i+1}}-{{q.question }}<br>
-                    {{q.proposition1}}<br>
-                    {{q.proposition2}}<br>
-                    {{q.proposition3}}<br>
-         
-         
-         
+                  <br>
+                    <label [for]="i" style="color:orangered" > {{i+1}}-{{q.question }}</label><br>suggestions<br>
+                   1.{{q.proposition1}}<br>
+                   2.{{q.proposition2}}<br>
+                   3.{{q.proposition3}}<br>
+
+                   <input [id]="i" class="form-control" type="text"  [(ngModel)]="reponses[i]"/>
+
+
+
                  </div>
         </div>
+        <div class="alert alert-warning" *ngIf="show">Votre Score:{{score}}/{{reponses.length}}</div>
+
+        <button id="score"  type="button" class="btn btn-success" (click)="calScore()" >Résultat</button>
         <button id="return"  type="button" class="btn btn-danger" [routerLink]="['/QCMetud']">Retourner</button>
 
     </div>
