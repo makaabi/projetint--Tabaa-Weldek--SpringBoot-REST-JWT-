@@ -1,1 +1,18 @@
-<p>repondreqcm works!</p>
+<div id="MainContainer">
+    <div id="q">
+        <div id="qcm">
+            <div id="titre">
+                {{qcm.nom}}</div>
+                <div id="question" *ngFor="let q of qcm.questions; let i = index">
+                   {{i+1}}-{{q.question }}<br>
+                    {{q.proposition1}}<br>
+                    {{q.proposition2}}<br>
+                    {{q.proposition3}}<br>
+         
+         
+         
+                 </div>
+        </div>
+        <button id="return"  type="button" class="btn btn-danger" [routerLink]="['/QCMetud']">Retourner</button>
+
+    </div>
