@@ -5,7 +5,7 @@ import { UserService } from '../user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminsecService implements CanActivate {
+export class EnseignantsecService implements CanActivate {
 
   constructor(private router: Router,private us: UserService) { }
 
@@ -16,8 +16,7 @@ export class AdminsecService implements CanActivate {
           let users=[]
           users=data
           this.us.user.subscribe(user => {
-            console.log(users)
-            if (user && this.us.userType(user.uid,users)=="admin") 
+            if (this.us.userType(user.uid,users)=="enseignant") 
             resolve(true);
             else 
               resolve(false)
@@ -30,6 +29,4 @@ export class AdminsecService implements CanActivate {
       )
     
     })
-  }
-
-}
+  }}

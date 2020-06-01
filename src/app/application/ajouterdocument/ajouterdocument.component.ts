@@ -26,7 +26,7 @@ export class AjouterdocumentComponent implements OnInit {
       let name=(<Document>form.value).nom;
       let institut=(<Document>form.value).institut;
       let branch=(<Document>form.value).branch;
-      let matiere=(<Document>form.value).institut;
+      let matiere=(<Document>form.value).matiere;
 
       let file = (<HTMLInputElement>this.file.nativeElement).files[0];
       let dated=new Date()

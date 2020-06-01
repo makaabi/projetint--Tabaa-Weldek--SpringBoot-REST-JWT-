@@ -51,63 +51,68 @@ import { DocumentetudComponent } from './application/documentetud/documentetud.c
 import { DocumentadmComponent } from './application/documentadm/documentadm.component';
 
 import {AdminsecService  } from './services/security/adminsec.service';
+import {EtudiantsecService  } from './services/security/etudiantsec.service';
+import {EnseignantsecService  } from './services/security/enseignantsec.service';
+
+
 
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
-  {path:'etudiant', component:HomeetudComponent},
-  {path:'enseignant', component:HomeensComponent},
+  {path:'etudiant', component:HomeetudComponent, canActivate: [EtudiantsecService]},
+  {path:'enseignant', component:HomeensComponent, canActivate: [EnseignantsecService]},
 
-  {path:'listusers', component:ListusersComponent},
+  {path:'listusers', component:ListusersComponent, canActivate: [AdminsecService]},
 
-  {path:'adminstat', component:AdminstatComponent},
-  {path:'viewstatsens', component:StatsComponent},
+  {path:'adminstat', component:AdminstatComponent, canActivate: [AdminsecService]},
+  {path:'viewstatsens', component:StatsComponent, canActivate: [EnseignantsecService]},
 
-  {path:'ajoutstat', component:AjoutstatComponent},
-  {path:'logiciels', component:ListlogicielsensComponent},
-  {path:'viewlogicielsadm', component:ViewlogicielsComponent},
-  {path:'ajoutlogiciel', component:AjoutlogicielComponent},
-  {path:'depotens', component:DepotensComponent},
+  {path:'ajoutstat', component:AjoutstatComponent, canActivate: [AdminsecService]},
+  {path:'logiciels', component:ListlogicielsensComponent, canActivate: [EnseignantsecService]},
+  {path:'viewlogicielsadm', component:ViewlogicielsComponent, canActivate: [AdminsecService]},
+  {path:'ajoutlogiciel', component:AjoutlogicielComponent, canActivate: [EnseignantsecService]},
+  {path:'depotens', component:DepotensComponent, canActivate: [EnseignantsecService]},
 
-  {path:'viewlogicielsetud', component:ViewlogicielsetudComponent},
-  {path:'viewstatsetud', component:ViewstatsetudComponent},
-  {path:'depotetud', component:DepotetudComponent},
+  {path:'viewlogicielsetud', component:ViewlogicielsetudComponent, canActivate: [EtudiantsecService]},
+  {path:'viewstatsetud', component:ViewstatsetudComponent, canActivate: [EtudiantsecService]},
+  {path:'depotetud', component:DepotetudComponent, canActivate: [EtudiantsecService]},
 
-  {path:'forumens', component:ForumensComponent},
-  {path:'AjouterPublicationens', component:ForumensajoutpubComponent},
-  {path:'Publicationens/:id', component:PublicationensComponent},
-  {path:'AjouterCommentaireens/:id', component:ForumensajoutcmntComponent},
+  {path:'forumens', component:ForumensComponent, canActivate: [EnseignantsecService]},
+  {path:'AjouterPublicationens', component:ForumensajoutpubComponent, canActivate: [EnseignantsecService]},
+  {path:'Publicationens/:id', component:PublicationensComponent, canActivate: [EnseignantsecService]},
+  {path:'AjouterCommentaireens/:id', component:ForumensajoutcmntComponent, canActivate: [EnseignantsecService]},
 
-  {path:'forumetud', component:ForumetudComponent},
-  {path:'AjouterPublicationetud', component:ForumetudajoutpubComponent},
-  {path:'Publicationetud/:id', component:PublicationetudComponent},
-  {path:'AjouterCommentaireetud/:id', component:ForumetudajoutcmntComponent},
+  {path:'forumetud', component:ForumetudComponent, canActivate: [EtudiantsecService]},
+  {path:'AjouterPublicationetud', component:ForumetudajoutpubComponent, canActivate: [EtudiantsecService]},
+  {path:'Publicationetud/:id', component:PublicationetudComponent, canActivate: [EtudiantsecService]},
+  {path:'AjouterCommentaireetud/:id', component:ForumetudajoutcmntComponent, canActivate: [EtudiantsecService]},
 
-  {path:'forumadm', component:ForumeadmComponent},
-  {path:'AjouterPublicationadm', component:ForumeadmajoutpubComponent},
-  {path:'Publicationadm/:id', component:PublicationadmComponent},
-  {path:'AjouterCommentaireadm/:id', component:ForumadmajoutcmntComponent},
+  {path:'forumadm', component:ForumeadmComponent, canActivate: [AdminsecService]},
+  {path:'AjouterPublicationadm', component:ForumeadmajoutpubComponent, canActivate: [AdminsecService]},
+  {path:'Publicationadm/:id', component:PublicationadmComponent, canActivate: [AdminsecService]},
+  {path:'AjouterCommentaireadm/:id', component:ForumadmajoutcmntComponent, canActivate: [AdminsecService]},
   
-  {path:'QCMens', component:QcmensComponent},
-  {path:'creerQCM', component:CreerqcmComponent},
-  {path:'Ajouterqs/:id', component:AjouterqsComponent},
-  {path:'qcm/:id', component:QcmComponent},
+  {path:'QCMens', component:QcmensComponent, canActivate: [EnseignantsecService]},
+  {path:'creerQCM', component:CreerqcmComponent, canActivate: [EnseignantsecService]},
+  {path:'Ajouterqs/:id', component:AjouterqsComponent, canActivate: [EnseignantsecService]},
+  {path:'qcm/:id', component:QcmComponent, canActivate: [EnseignantsecService]},
 
-  {path:'QCMetud', component:QcmetudComponent},
-  {path:'repondreqcm/:id', component:RepondreqcmComponent},
+  {path:'QCMetud', component:QcmetudComponent, canActivate: [EtudiantsecService]},
+  {path:'repondreqcm/:id', component:RepondreqcmComponent, canActivate: [EtudiantsecService]},
 
-  {path:'ajoutdocument', component:AjouterdocumentComponent},
-  {path:'documentsens', component:DocumentensComponent},
+  {path:'ajoutdocument', component:AjouterdocumentComponent, canActivate: [EnseignantsecService]},
+  {path:'documentsens', component:DocumentensComponent, canActivate: [EnseignantsecService]},
 
-  {path:'documentsetud', component:DocumentetudComponent},
-  {path:'documentsadmin', component:DocumentadmComponent},
+  {path:'documentsetud', component:DocumentetudComponent, canActivate: [EtudiantsecService]},
+  {path:'documentsadmin', component:DocumentadmComponent, canActivate: [AdminsecService]},
 
 
 
-  {path:'admin', component:HomeadmComponent},
+  {path:'admin', component:HomeadmComponent, canActivate: [AdminsecService]},
   {path:'', redirectTo:'home', pathMatch:'full'},
+  
   {path:'**', component:PagenotfoundComponent}
 
 
