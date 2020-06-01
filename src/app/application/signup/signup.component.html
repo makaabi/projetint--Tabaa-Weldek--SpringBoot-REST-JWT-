@@ -1,42 +1,99 @@
-<h1 class="text-center">Créer un compte</h1>
+<div class=" container-fluid mt-5"  >
+  <div class="row justify-content-center">
+    <div class="col-sm-8 mart marbottom">
+      <div class="row justify-content-center mt-5">
 
-   <form (ngSubmit)="signup(f)" #f="ngForm">
-    <div class="form-group ml-4">
-      <label for="mat">
-        Type
-        </label>
-        <select   [(ngModel)]='typeu' name="typeu"  class="form-control" >
-          <option  value="etudiant">etudiant</option>
-          <option value="enseignant">enseignant</option>
-          </select>
-    </div>
-    <div class="form-group ml-4">
-    <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Nom" required>
-    <div class="alert alert-danger" *ngIf="name.invalid && name.touched">le champ nom est obligatoire</div>
-    </div>
 
-    <div class="form-group ml-4">
-    <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="E-mail" required email>
-    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">le champ E-mail est obligatoire</div>
-    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Veuillez saisir une adresse e-mail valide</div>
-    </div>
-    <div class="form-group ml-4">
-    <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="mot de passe"
-      required minlength="8">
-    <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">mot de passe obligatoire</div>
-    <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Entrez une combinaison d'au moins 8 charactères
-   </div>
-    </div>
 
-    <div class="form-group ml-4">
-    <input ngModel name="passwordConfirm" #passwordConfirm="ngModel" type="password" class="form-control" placeholder="confirmer mot de passe"
-      required>
-    <div class="alert alert-danger" *ngIf="passwordConfirm.invalid && passwordConfirm.touched">confirmer mot de passe obligatoire</div>
-    <div class="alert alert-danger" *ngIf="passwordConfirm.value !== password.value && passwordConfirm.touched">confirmation  invalid
+   <form class="col-sm-8 " (ngSubmit)="signup(f)" #f="ngForm">
+
+      <table  class="table  table-striped border-info shadow-lg mt-3">
+        <tbody class="text-center">
+          <tr>
+            <th class="table-dark"><h2 class="text-center">Créer un compte</h2></th>
+          </tr>
+
+          <tr class="table-warning">
+            <th class="text-center">Type</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th>
+              <select   [(ngModel)]='typeu' name="typeu"  class="custom-select text-center" >
+                <option  value="etudiant">etudiant</option>
+                <option value="enseignant">enseignant</option>
+              </select>
+            </th>
+          </tr>
+
+          <tr class="table-warning">
+            <th class="text-center">Nom</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th><input ngModel name="name" #name="ngModel" type="text" class="form-control text-center" placeholder="Nom" required></th>
+          </tr>
+
+          <tr >
+            <th class="alert alert-danger text-center" *ngIf="name.invalid && name.touched">le champ nom est obligatoire</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th class="text-center">Email</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th><input ngModel name="email" #email="ngModel" type="email" class="form-control text-center" placeholder="E-mail" required email></th>
+          </tr>
+
+          <tr >
+            <th class="alert alert-danger text-center" *ngIf="email.touched && email.errors?.required">le champ E-mail est obligatoire</th>
+            <th class="alert alert-danger text-center" *ngIf="email.touched && email.errors?.email">Veuillez saisir une adresse e-mail valide</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th class="text-center">mot de passe</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th><input ngModel name="password" #password="ngModel" type="password" class="form-control text-center" placeholder="mot de passe" required minlength="8"></th>
+          </tr>
+
+          <tr >
+            <th class="alert alert-danger text-center" *ngIf="password.touched && password.errors?.required">mot de passe obligatoire</th>
+            <th class="alert alert-danger text-center" *ngIf="password.touched && password.errors?.minlength">Entrez une combinaison d'au moins 8 charactères</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th class="text-center">confirmer mot de passe</th>
+          </tr>
+
+          <tr class="table-warning">
+            <th><input ngModel name="passwordConfirm" #passwordConfirm="ngModel" type="password" class="form-control text-center" placeholder="confirmer mot de passe" required></th>
+          </tr>
+
+          <tr >
+            <th class="alert alert-danger text-center"
+             *ngIf="passwordConfirm.invalid && passwordConfirm.touched || passwordConfirm.value !== password.value && passwordConfirm.touched">confirmer mot de passe </th>
+          </tr>
+        
+
+          <tr class="table-warning">
+            <th class="form-group text-center ">
+              <input type="submit" value="Inscription" class="btn btn-dark anim" [disabled]="f.invalid" >
+            </th>
+          </tr>
+        </tbody>
+      </table>
+  
+ </form>
+ 
+ <div class="alert alert-danger" *ngIf="erreur">
+  {{ erreur }}
+</div>
+
+ 
       </div>
     </div>
- <input type="submit" value="Inscription" class="btn btn-success" [disabled]="f.invalid" >
- <br/><div class="alert alert-danger" *ngIf="erreur">
-    {{ erreur }}
   </div>
- </form>
+</div>

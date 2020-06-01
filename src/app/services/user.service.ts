@@ -52,11 +52,11 @@ export class UserService {
 
   redirect(typeu:string){
         if(typeu=="etudiant")
-          this.router.navigate(['/etudiant']);
+          this.router.navigate(['/documentsetud']);
         else if (typeu=="enseignant")
-          this.router.navigate(['/enseignant']);
+          this.router.navigate(['/documentsens']);
         else 
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/listusers']);
   }
 
   deleteUserserv(id:string,Users:User[]):User[]

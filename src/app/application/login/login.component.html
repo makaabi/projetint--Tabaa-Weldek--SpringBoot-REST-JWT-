@@ -1,23 +1,57 @@
-<h2 class="text-center">Log In</h2>
-<form #f="ngForm" (ngSubmit)="login(f)">
+<div class=" container-fluid mt-5"  >
+  <div class="row justify-content-center">
+    <div class="col-sm-8 mart">
+    <div class="row justify-content-center mt-5">
 
-    <div class="form-group ml-4">
-  <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="E-mail" required email>
-  <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">le champ E-mail est obligatoire</div>
-  <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Veuillez saisir une adresse e-mail valide</div>
-    </div>
-    <div class="form-group ml-4">
+<form class="col-sm-8" #f="ngForm" (ngSubmit)="login(f)">
 
-  <input ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="mot de passe"
-    required minlength="8">
-  <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">mot de passe obligatoire</div>
-  <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Entrez une combinaison d'au moins 8 charactères
-    </div>
-</div>
-<div class="form-group ml-4"><button class="btn btn-primary" [disabled]="f.invalid">Login</button></div>
+  <table  class="table  table-striped border-info shadow-lg mt-3">
+    <tbody class="text-center">
+      <tr>
+        <th class="table-dark"><h2 class="text-center">Login</h2></th>
+      </tr>
+      <tr class="table-warning">
+        <th class="text-center">Email</th>
+      </tr>
+      <tr class="table-warning">
+        <th><input ngModel name="email" #email="ngModel" type="email" class="form-control text-center" placeholder="E-mail" required email></th>
+      </tr>
+      <tr >
+        <th class="alert alert-danger text-center" *ngIf="email.touched && email.errors?.required">le champ E-mail est obligatoire</th>
+        <th class="alert alert-danger text-center" *ngIf="email.touched && email.errors?.email">Veuillez saisir une adresse e-mail valide</th>
+      </tr>
+
+      <tr class="table-warning">
+        <th class="text-center">Password</th>
+      </tr>
+      <tr class="table-warning">
+        <th><input ngModel name="password" #password="ngModel" type="password" class="form-control text-center" placeholder="mot de passe" required minlength="8"></th>
+      </tr>
+      <tr>
+        <th class="alert alert-danger text-center" *ngIf="password.touched && password.errors?.required">mot de passe obligatoire</th>
+        <th class="alert alert-danger text-center" *ngIf="password.touched && password.errors?.minlength">Entrez une combinaison d'au moins 8 charactères</th>
+      </tr>
+      <tr class="table-warning">
+        <th class="form-group text-center ">
+          <button class="btn btn-dark anim marright" [disabled]="f.invalid">Login</button>
+          <button class="btn btn-dark anim " [routerLink]="['../signup']" role="button" routerLinkActive="active">s'inscrire</button>
+
+        </th>
+       
+      </tr>
+      <tr class="table-warning"  *ngIf="erreur">
+        <th class="text-center text-danger">  {{ erreur }}
+        </th>
+      </tr>
+      
+
+    </tbody>
+  </table>
   
 </form>
-<br>
-<div class="alert alert-danger" *ngIf="erreur">
-  {{ erreur }}
+
+
+      </div>
+    </div>
+  </div>
 </div>
