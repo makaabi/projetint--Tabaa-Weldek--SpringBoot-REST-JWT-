@@ -21,7 +21,7 @@ export class AjoutlogicielComponent implements OnInit {
       let lientel=(<Logiciel>form.value).lientel;
       let image = (<HTMLInputElement>this.image.nativeElement).files[0];
       this.lg.addLog(name,plateform,lientel,image);
-      this.router.navigate(['/viewlogiciels']);
+      this.router.navigate(['/logiciels']);
   }
 
   ngOnInit() {
