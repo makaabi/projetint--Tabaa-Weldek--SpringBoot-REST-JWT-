@@ -19,20 +19,13 @@ export class QcmensComponent implements OnInit {
     this.qs.getAllQCM().subscribe(
     data => {
       for(let j=0;j<data.length;j++){
-       let questions : Question[]=[];
+       let questions=[];
 
         console.log(data[j].payload.doc.id)
         this.qs.getQuestions(data[j].payload.doc.id).subscribe(
           donnee=>{      
-            questions= donnee.map(
-              qs=>
-              new Question(qs.payload.doc.id,
-                qs.payload.doc.data()['question'],
-                qs.payload.doc.data()['reponse'],
-                qs.payload.doc.data()['proposition1'],
-                qs.payload.doc.data()['proposition2'],
-                qs.payload.doc.data()['proposition3'])
-            )
+            questions=donnee  
+
             this.QCMs.push(new Qcm( 
               data[j].payload.doc.id,
               data[j].payload.doc.data()['nom'],

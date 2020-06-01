@@ -23,18 +23,11 @@ export class RepondreqcmComponent implements OnInit {
     this.qs.getAllQCM().subscribe(
       data => {
         for(let j=0;j<data.length;j++){
-         let questions : Question[]=[];
+         let questions =[];
             this.qs.getQuestions(data[j].payload.doc.id).subscribe(
-            donnee=>{      
-              questions= donnee.map(
-                qs=>
-                new Question(qs.payload.doc.id,
-                  qs.payload.doc.data()['question'],
-                  qs.payload.doc.data()['reponse'],
-                  qs.payload.doc.data()['a'],
-                  qs.payload.doc.data()['b'],
-                  qs.payload.doc.data()['c'])
-              )
+            donnee=>{    
+              questions=donnee  
+             
               let qcm:Qcm=new Qcm( 
                 data[j].payload.doc.id,
                 data[j].payload.doc.data()['nom'],

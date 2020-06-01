@@ -15,7 +15,7 @@ export class QcmService {
 
   }
   getQuestions(id:string){
-    return this.fs.collection('Qcms').doc(id).collection('Questions').snapshotChanges();
+    return this.fs.collection('Qcms').doc(id).collection('Questions').valueChanges();
   }
   
   CreerQCm(nom:string,matiere:string,enseignantid:string,dateqcm:Date){
