@@ -48,6 +48,14 @@ export class UserService {
 
   }
 
+  userType(id:string,users):string{
+    let obj:any=null;
+    for(let u of users)
+      if (id==u.id)
+      obj=u;
+    return obj.type;
+
+  }
   
 
   redirect(typeu:string){

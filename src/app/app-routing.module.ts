@@ -50,13 +50,18 @@ import { DocumentensComponent } from './application/documentens/documentens.comp
 import { DocumentetudComponent } from './application/documentetud/documentetud.component';
 import { DocumentadmComponent } from './application/documentadm/documentadm.component';
 
+import {AdminsecService  } from './services/security/adminsec.service';
+
+
 const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'etudiant', component:HomeetudComponent},
   {path:'enseignant', component:HomeensComponent},
+
   {path:'listusers', component:ListusersComponent},
+
   {path:'adminstat', component:AdminstatComponent},
   {path:'viewstatsens', component:StatsComponent},
 
