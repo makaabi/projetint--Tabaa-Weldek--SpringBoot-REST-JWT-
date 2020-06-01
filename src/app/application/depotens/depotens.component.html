@@ -1,19 +1,20 @@
+<div id="background"></div>
 <app-homeens></app-homeens>
+<div id="MainContainer">
 <div id="leftdiv">
+    <h3>Corrections</h3>
     <ng-container *ngFor="let t of Travails">
 
         <a [href]="t.lien"  target="_blank">{{t.nom}}</a>
-<p>déposer par {{getEtudiantname(t.etudiantid)}} </p>
+<p style="border-bottom: 1px solid black">déposer par {{getEtudiantname(t.etudiantid)}} </p>
     </ng-container>
-   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   
 
 
    
 </div>
-
-    <img id="sideimg" src="https://firebasestorage.googleapis.com/v0/b/projet-f0004.appspot.com/o/desktop.jpg?alt=media&token=ab5b52b0-9e13-46d5-bd1e-dd78a3b1d81a"/>
-
 <div id="deposerdiv">
+    <div>
 <h5>Déposer une Correction</h5>
 <form (ngSubmit)="addCorrection(f)" #f="ngForm">
         
@@ -41,4 +42,6 @@
 </div>
 
 </form>
+</div>
+</div>
 </div>
