@@ -36,6 +36,8 @@ export class PublicationadmComponent implements OnInit {
               cmnt=>
               new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'],cmnt.payload.doc.data()['datec'])
             )
+            commentaires.sort((a, b) => a.datec < b.datec ? -1 : a.datec > b.datec ? 1 : 0)
+
             let pub:Publication=new Publication( 
               data[j].payload.doc.id,data[j].payload.doc.data()['titre'],data[j].payload.doc.data()['description'],
               data[j].payload.doc.data()['ownerid'],data[j].payload.doc.data()['datep'],commentaires)

@@ -1,26 +1,24 @@
+<div id="background"></div>
 <app-homeetud></app-homeetud>
-
 <div id="MainContainer">
     <div id="q">
         <div id="qcm">
-            <div id="titre">
-                {{qcm.nom}}</div>
+            <div id="titre" align="center">
+                {{qcm.nom}}
+              </div>
                 <div id="question" *ngFor="let q of qcm.questions; let i = index">
-                  <br>
-                    <label [for]="i" style="color:orangered" > {{i+1}}-{{q.question }}</label><br>suggestions<br>
+                    <label [for]="i" style="color:rgb(197, 5, 5)" > {{i+1}}-{{q.question }}</label><br>
                    1.{{q.a}}<br>
                    2.{{q.b}}<br>
                    3.{{q.c}}<br>
 
                    <input [id]="i" class="form-control" type="text"  [(ngModel)]="reponses[i]"/>
-
-
-
                  </div>
         </div>
         <div class="alert alert-warning" *ngIf="show">Votre Score:{{score}}/{{reponses.length}}</div>
 
-        <button id="score"  type="button" class="btn btn-success" (click)="calScore()" >Résultat</button>
+        <div id="btns">
+        <button id="score"   type="button" class="btn btn-success" (click)="calScore()" >Résultat</button>
         <button id="return"  type="button" class="btn btn-danger" [routerLink]="['/QCMetud']">Retourner</button>
-
+      </div>
     </div>

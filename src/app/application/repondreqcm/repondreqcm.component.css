@@ -1,32 +1,63 @@
 #MainContainer{
     display : flex;
     flex-direction: column;
-    background-color:rgb(240, 230, 209);
     margin-left : 15vw;
-    margin-top:10vh;
     align-items: center;
     font-size: 1vw;
     height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+#background{
+    width: 100vw;
+    height : 100vh;
+    background-image: url(https://cdn.pixabay.com/photo/2017/10/14/09/56/journal-2850091_960_720.jpg);
+    position: fixed;
+    z-index: -1;
+    background-size: cover;
+    filter: blur(3px);
+  }
 #q{
     width : 65vw;
 }
 #qcm{
     
-    background-color: rgb(238, 217, 186);
+    
     margin : 1vw;
-    font-size: 2vw;
-    padding : 1vw;
+    font-size: 1.4vw;
     width : 60vw;
     border-radius: 10px;
-    position: relative;
-    left : -8vw;
     transition: 0.5s all;
 }
 #titre{
     font-weight : bold;
 }
+#btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vw;
+}
+#score{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    margin-right: 1vw;
+}
 #return{
-    margin-right: 70vw;
-    margin-top: 15vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+input{
+    margin-top: 1vw;
+}
+#question{
+    margin-bottom: 1vw;
+    background-color: rgb(238, 217, 186);
+    padding: 1vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+#titre{
+    font-size: 2vw;
+    margin-bottom: 1vw;
+    color : white;
 }

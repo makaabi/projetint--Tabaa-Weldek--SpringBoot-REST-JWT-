@@ -1,5 +1,5 @@
+<div id="background"></div>
 <app-homeetud></app-homeetud>
-
 <div id="MainContainer">
     <div id="pub">
         <div id="publication">
@@ -8,10 +8,7 @@
                 {{pub.datep.toDate()| date:'dd/MM/yyyy HH:mm'}}<br>
                 {{pub.titre}}</div>
             <div id="description">{{pub.description}}</div>
-            <div id = "Comment">
-                <img  src="../assets/Comment.png" style="position: absolute;align-self: center;">
-                <div id="nbComment">{{pub.commentaires.length}}</div>
-            </div>
+           
         </div>
         <button id="AjoutCom" type="button" class="btn btn-dark" [routerLink]="['/AjouterCommentaireetud',pub.idp]">Ajouter Commentaire</button>
     </div>

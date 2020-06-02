@@ -1,14 +1,31 @@
+<div id="background"></div>
 <app-homeetud></app-homeetud>
-<h3>La liste des Documents</h3>
-<ng-container *ngFor="let d of Documents">
+<div id="MainContainer">
+    <ng-container *ngFor="let i of instituts, let ix=index">
+         <div id="document" (click)="onclickInstitut()">
+            <div class="dropdown">
+                <div class="dropdown-toggle" id="institut">{{i.institut}}</div>
+            </div>
+        </div>
 
-    <div>
-        <h3>{{d.nom}}</h3>
-
+        <ng-container *ngFor="let b of i.branches,let bx=index">
+            <div id="document" style="margin-left: 12vw;" (click)="onclickBranche()" *ngIf="branche==true">
+                <div class="dropdown-toggle" id="branche">{{b.branche}}</div>
+            </div>
         
-        <a role="button" class="btn btn-info" [href]="d.lien"  target="_blank">Consulter</a>
-    </div>
-
-    <hr/>
     
+        <ng-container *ngFor="let m of i.branches[bx].matieres,let mx = index">
+            <div id="document" style="margin-left: 14vw;" *ngIf="matiere==true" (click)="onclickMatiere()">
+                <div class="dropdown-toggle" id="matiere">{{m.matiere}}</div>
+            </div>
+
+    
+        <ng-container *ngFor="let n of i.branches[bx].matieres[mx].noms">
+                    <div id="document" style="margin-left: 16vw;" *ngIf="nomm==true">
+                        <a style="color : black" [href]="n.lien"  target="_blank"><div id="nom">{{n.nom}}</div></a>
+                    </div>
+        </ng-container>
+        </ng-container>
+        </ng-container>
 </ng-container>
+</div>

@@ -9,31 +9,37 @@
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
 }
-h3{
-  text-align: center;
-  font-family: cursive;
-  font-size: 32px;
+#MainContainer{
+  margin-left: 180px;
+  margin-top: 5vw;
 }
-li{
-    margin:20px 185px;
-
+#background{
+  width : 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleX(-1);
 }
-div{
-  margin:20px 185px;
-  background: lightcyan ;
-  width:100%;
-
+#document{
+  background-color: white;
+  padding: 1vh;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3vw;
+  margin-left : 10vw;
+  padding: 1vh;
+  margin-bottom:1vh ;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
 }
-hr{
-  background-color: black;
+#document:hover{
+  cursor: pointer;
 }
-#add,button{
-  border-radius: 25px;
-  padding: 10px;
-}
-#round{
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-
+p{
+  margin-right: 1vw;
 }

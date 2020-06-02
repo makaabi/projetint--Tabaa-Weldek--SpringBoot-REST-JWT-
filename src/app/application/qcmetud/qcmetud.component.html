@@ -1,6 +1,6 @@
+<div id="background"></div>
 <app-homeetud></app-homeetud>
 <div id="MainContainer">
-    <h1>les Qcms</h1>
 
             <div id="Qcm" *ngFor="let q of QCMs" class="list-group-item"  >
                     Nom Qcm : {{q.nom}}<br>
@@ -9,7 +9,5 @@
                     Créer par : {{getcurrName(q.ensid)}}<br>
                     nombre de questions: {{q.questions.length}}<br>
                     <button id="RepondQCM" type="button" class="btn btn-dark" [routerLink]="['/repondreqcm',q.id]">Repondre</button>
-                    
-
          </div>
 </div>

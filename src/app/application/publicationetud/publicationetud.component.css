@@ -3,7 +3,6 @@
     flex-direction: column;
     background-color:rgb(240, 230, 209);
     margin-left : 15vw;
-    margin-top:10vh;
     align-items: center;
     font-size: 1vw;
     height : auto
@@ -16,7 +15,7 @@
     
     background-color: rgb(238, 217, 186);
     margin : 1vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     padding : 1vw;
     width : 60vw;
     border-radius: 10px;
@@ -51,8 +50,15 @@
     float: right;
     position: relative;
     bottom : 13vh;
-    width: 9vw;
-    font-size: 0.7vw;
+    width: 10vw;
+    font-size: 0.8vw;
+}
+#background{
+    width: 100vw;
+    height : 100vh;
+    background-color: rgb(240, 230, 209);
+    position: fixed;
+    z-index: -1;
 }
 #commentaire{
     background-color: rgb(177, 177, 177);
@@ -66,5 +72,6 @@
 }
 #return{
     margin-right: 70vw;
-    margin-top: 15vh;
+    margin-top: 5vh;
+    margin-bottom: 2vw;
 }

@@ -44,6 +44,8 @@ export class ForumetudComponent implements OnInit {
           i++;
       }
     })
+    this.publications.sort((a, b) => a.datep < b.datep ? -1 : a.datep > b.datep ? 1 : 0)
+
     this.us.getAllUsers().subscribe(
       data => {
         this.Users = data.map(

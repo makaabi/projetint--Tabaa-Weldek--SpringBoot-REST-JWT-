@@ -1,10 +1,11 @@
+<div id="background"></div>
 <app-homeetud></app-homeetud>
 <div id="MainContainer">
     <div id="ImageContainer"></div>
     <div id = "ToolBar">
         <img src="../assets/Logo.png">
         
-        <button id="AjoutPub" type="button" class="btn btn-primary" [routerLink]="['/AjouterPublicationetud']">Ajouter Publication</button>
+        <button id="AjoutPub" align="center" type="button" class="btn btn-primary" [routerLink]="['/AjouterPublicationetud']">Ajouter Publication</button>
     </div>
     <div *ngFor="let t of publications">
     <div id="pub" >

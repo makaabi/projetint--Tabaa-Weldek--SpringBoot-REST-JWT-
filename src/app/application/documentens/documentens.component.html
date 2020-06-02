@@ -1,16 +1,33 @@
+<div id="background"></div>
 <app-homeens></app-homeens>
-<h3>La liste des Documents</h3>
-<ng-container *ngFor="let d of Documents">
+<div id="MainContainer">
+    <li><a id="add" role="button" class="btn btn-success" [routerLink]="['../ajoutdocument']" >Ajouter un document</a></li>
+    <ng-container *ngFor="let i of instituts, let ix=index">
+         <div id="document" (click)="onclickInstitut()">
+            <div class="dropdown">
+                <div class="dropdown-toggle" id="institut">{{i.institut}}</div>
+            </div>
+        </div>
 
-    <div>
-        <h3>{{d.nom}}</h3>
-
-
-        <a role="button" class="btn btn-info" [href]="d.lien"  target="_blank">Consulter</a>
-        <a id="supp" class="btn btn-danger" role="button" (click)="deleteDocument(d.id)" >supprimer</a>
-    </div>
-
-    <hr/>
+        <ng-container *ngFor="let b of i.branches,let bx=index">
+            <div id="document" style="margin-left: 12vw;" (click)="onclickBranche()" *ngIf="branche==true">
+                <div class="dropdown-toggle" id="branche">{{b.branche}}</div>
+            </div>
+        
     
+        <ng-container *ngFor="let m of i.branches[bx].matieres,let mx = index">
+            <div id="document" style="margin-left: 14vw;" *ngIf="matiere==true" (click)="onclickMatiere()">
+                <div class="dropdown-toggle" id="matiere">{{m.matiere}}</div>
+            </div>
+
+    
+        <ng-container *ngFor="let n of i.branches[bx].matieres[mx].noms">
+                    <div id="document" style="margin-left: 16vw;" *ngIf="nomm==true">
+                        <a style="color : black" [href]="n.lien"  target="_blank"><div id="nom">{{n.nom}}</div></a>
+                        <a id="supp" role="button" (click)="deleteDocument(i.id)">X</a>
+                    </div>
+        </ng-container>
+        </ng-container>
+        </ng-container>
 </ng-container>
-<li><a id="add" role="button" class="btn btn-success" [routerLink]="['../ajoutdocument']" >Ajouter un document</a></li>
+</div>

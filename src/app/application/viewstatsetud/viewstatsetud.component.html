@@ -1,13 +1,12 @@
+
 <div id="background"></div>
 <app-homeetud></app-homeetud>
 <div id="MainContainer">
-    <h3>La liste des statistique</h3>
 
 <ng-container *ngFor="let s of Statistiques">
     <div id="stat">
         <h3>{{s.nom}}</h3>
         <img [src]="s.lien">
     </div>
-    <hr/>
 </ng-container>
 </div>

@@ -8,6 +8,7 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
+  color : rgb(199, 199, 199);
 }
 #MainContainer{
   margin-left: 180px;
@@ -16,11 +17,12 @@
 #background{
   width: 100vw;
   height : 100vh;
-  background-image: url("https://wallpaperplay.com/walls/full/5/5/d/205626.jpg");
+  background-image: url("https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
   z-index: -1;
+  transform : scaleX(-1);
 }
 
 #logiciel{
@@ -48,9 +50,7 @@ h3{
   font-family: cursive;
   font-size: 32px;
 }
-li{
 
-}
 hr{
   background-color: black;
 }

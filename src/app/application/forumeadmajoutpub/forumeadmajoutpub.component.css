@@ -3,13 +3,18 @@
     flex-direction: column;
     background-color:rgb(240, 230, 209);
     margin-left : 15vw;
-    margin-top:10vh;
     font-size: 1vw;
     width : 85vw;
     height: 90vh;
     padding: 3vw;
 }
-
+#background{
+    width: 100vw;
+    height : 100vh;
+    background-color: rgb(240, 230, 209);
+    position: fixed;
+    z-index: -1;
+  }
 h1{
     margin-bottom: 2vw;
 }
