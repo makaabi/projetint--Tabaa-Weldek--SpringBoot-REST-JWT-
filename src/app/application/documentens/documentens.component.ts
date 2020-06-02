@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Document} from 'src/app/interfaces/Document';
 import {DocumentService} from 'src/app/services/document.service';
 import { UserService } from 'src/app/services/user.service';
+import {Router} from '@angular/router';
+
 import {Institut} from 'src/app/interfaces/Institut';
 import { Branche } from 'src/app/interfaces/Branche';
 import { Matiere } from 'src/app/interfaces/Matiere';
@@ -18,7 +20,7 @@ export class DocumentensComponent implements OnInit {
   nomm : boolean = false;
   instituts : Institut[] = [];
 
-  constructor(private ds:DocumentService,private us: UserService) { }
+  constructor(private ds:DocumentService,private us: UserService,private router:Router) { }
 
   ngOnInit() {
 
@@ -44,7 +46,8 @@ export class DocumentensComponent implements OnInit {
 
   deleteDocument(id:string){
     this.Documents=this.ds.deleteDocument(id,this.Documents);
-  }
+    location.reload();
+    }
 
   insert(){
     if(this.Documents.length!=0){
@@ -83,6 +86,7 @@ export class DocumentensComponent implements OnInit {
         if(!insExist)this.instituts.push(new Institut(i.id,i.institut,[new Branche(i.branch,[new Matiere(i.matiere,[new Nom(i.nom,i.lien)])])]));
       }
     }
+
   }
 
   onclickInstitut(){
