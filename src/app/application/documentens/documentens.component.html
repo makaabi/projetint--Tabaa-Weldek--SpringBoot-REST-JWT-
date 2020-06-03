@@ -24,7 +24,7 @@
         <ng-container *ngFor="let n of i.branches[bx].matieres[mx].noms">
                     <div id="document" style="margin-left: 16vw;" *ngIf="nomm==true">
                         <a style="color : black" [href]="n.lien"  target="_blank"><div id="nom">{{n.nom}}</div></a>
-                        <a id="supp" role="button" (click)="deleteDocument(i.id)">X</a>
+                        <a id="supp" role="button" (click)="deleteDocument(n.id)">X</a>
                     </div>
         </ng-container>
         </ng-container>

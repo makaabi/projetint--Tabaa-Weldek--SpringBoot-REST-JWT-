@@ -46,13 +46,14 @@ export class DocumentensComponent implements OnInit {
 
   deleteDocument(id:string){
     this.Documents=this.ds.deleteDocument(id,this.Documents);
+    console.log(id);
     location.reload();
     }
 
   insert(){
     if(this.Documents.length!=0){
       let a : Document = this.Documents[0];
-      this.instituts.push(new Institut(a.id,a.institut,[new Branche(a.branch,[new Matiere(a.matiere,[new Nom(a.nom,a.lien)])])]));
+      this.instituts.push(new Institut(a.institut,[new Branche(a.branch,[new Matiere(a.matiere,[new Nom(a.id,a.nom,a.lien)])])]));
       let insExist : boolean = false;
       let matExist : boolean = false;
       let branExist : boolean = false;
@@ -74,16 +75,16 @@ export class DocumentensComponent implements OnInit {
                         nomExist = true;
                       }
                     }
-                    if(insExist&&branExist&&matExist&&!nomExist)m.noms.push(new Nom(i.nom,i.lien));
+                    if(insExist&&branExist&&matExist&&!nomExist)m.noms.push(new Nom(i.id,i.nom,i.lien));
                   }
                 }
-                if(insExist&&branExist&&!matExist)b.matieres.push(new Matiere(i.matiere,[new Nom(i.nom,i.lien)]));
+                if(insExist&&branExist&&!matExist)b.matieres.push(new Matiere(i.matiere,[new Nom(i.id,i.nom,i.lien)]));
               }
             }
-            if(insExist&&!branExist)y.branches.push(new Branche(i.branch,[new Matiere(i.matiere,[new Nom(i.nom,i.lien)])]));
+            if(insExist&&!branExist)y.branches.push(new Branche(i.branch,[new Matiere(i.matiere,[new Nom(i.id,i.nom,i.lien)])]));
           }
         }
-        if(!insExist)this.instituts.push(new Institut(i.id,i.institut,[new Branche(i.branch,[new Matiere(i.matiere,[new Nom(i.nom,i.lien)])])]));
+        if(!insExist)this.instituts.push(new Institut(i.institut,[new Branche(i.branch,[new Matiere(i.matiere,[new Nom(i.id,i.nom,i.lien)])])]));
       }
     }
 

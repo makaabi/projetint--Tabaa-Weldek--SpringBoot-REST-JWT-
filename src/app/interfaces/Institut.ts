@@ -3,7 +3,7 @@ import { Matiere } from './Matiere';
 import { Branche } from './Branche';
 
 export class Institut{
-    constructor(private _id:string,private _institut:string,private _branches:Branche[]){}
+    constructor(private _institut:string,private _branches:Branche[]){}
     public get branches(): Branche[] {
         return this._branches;
     }
@@ -16,10 +16,5 @@ export class Institut{
     public set institut(value: string) {
         this._institut = value;
     }
-    public get id(): string {
-        return this._id;
-    }
-    public set id(value: string) {
-        this._id = value;
-    }
+
 }
