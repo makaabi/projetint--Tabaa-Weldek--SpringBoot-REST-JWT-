@@ -7,7 +7,7 @@
     border-radius: 20px;
     justify-content: center;
     align-items: center;
-    max-width: 25vw;
+    max-width: 30vw;
     min-height: 60vh;
     background-color: #031321;
     font-family: consolas;
@@ -30,7 +30,6 @@
     box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3 ;
     transition-delay: 1s;
 }
-
 a span{
     position: absolute;
     display: block;
@@ -83,7 +82,7 @@ a:hover span:nth-child(4){
     transition-delay:0.75s ;
 }
 .c2{
-    color: white;
+    color: transparent;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 13%;
@@ -93,8 +92,11 @@ a:hover span:nth-child(4){
     letter-spacing: 5px;
     font-weight: bold;
     background-image: linear-gradient(to right,#462523 0,#cb9b51 22%,#f6e27a 45%,#f6f2c0 50%,#f6e27a 55%,#cb9b51 78%,#462523 100%) ;
+    -webkit-background-clip: text;
 }
+
 .c3{
+    margin-top: 10px;
     color: #f6e27a;
     position: absolute;
     top:20%;
@@ -103,7 +105,4 @@ a:hover span:nth-child(4){
     line-height: 25px;
     font-family: 'Times New Roman',serif;
     
-}
-a{
-    color:white;
 }
