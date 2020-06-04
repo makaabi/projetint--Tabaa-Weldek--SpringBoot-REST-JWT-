@@ -11,6 +11,7 @@ import {UserService} from 'src/app/services/user.service';
 export class ForumadmajoutcmntComponent implements OnInit {
   idp : string;
   currentadmid:string;
+  description:string;
 
  
   constructor(private activatedRoute : ActivatedRoute,private fs:ForumService,private router:Router,private us: UserService) { }

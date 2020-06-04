@@ -12,6 +12,7 @@ import {UserService} from 'src/app/services/user.service';
 export class ForumensajoutcmntComponent implements OnInit {
   idp : string;
   currentensid:string;
+  description:string;
 
  
   constructor(private activatedRoute : ActivatedRoute,private fs:ForumService,private router:Router,private us: UserService) { }

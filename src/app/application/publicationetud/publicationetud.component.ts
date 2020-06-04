@@ -34,13 +34,13 @@ export class PublicationetudComponent implements OnInit {
           donnee=>{      
            commentaires= donnee.map(
               cmnt=>
-              new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'],cmnt.payload.doc.data()['datec'])
+              new Commentaire(cmnt.payload.doc.id,cmnt.payload.doc.data()['description'],cmnt.payload.doc.data()['ownerid'],cmnt.payload.doc.data()['datec'].toDate())
             )
             commentaires.sort((a, b) => a.datec < b.datec ? -1 : a.datec > b.datec ? 1 : 0)
 
             let pub:Publication=new Publication( 
               data[j].payload.doc.id,data[j].payload.doc.data()['titre'],data[j].payload.doc.data()['description'],
-              data[j].payload.doc.data()['ownerid'],data[j].payload.doc.data()['datep'],commentaires)
+              data[j].payload.doc.data()['ownerid'],data[j].payload.doc.data()['datep'].toDate(),commentaires)
             this.publications.push(pub)
               if(data[j].payload.doc.id==this.idp)
               this.pub=pub;
@@ -54,7 +54,6 @@ export class PublicationetudComponent implements OnInit {
           i++;
       }
     })
-
     this.us.getAllUsers().subscribe(
       data => {
         this.Users = data.map(

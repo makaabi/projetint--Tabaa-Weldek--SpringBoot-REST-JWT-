@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class ForumeadmajoutpubComponent implements OnInit {
   currentadmid:string;
+  description:string;
 
   constructor(private us: UserService,private fs:ForumService,private router:Router) { 
     this.us.user.subscribe(user => this.currentadmid=user.uid);

@@ -5,7 +5,7 @@
         <div id="publication">
             <div id="titre">
                 {{getcurrName(pub.ownerid)}}<br>
-                {{pub.datep.toDate()| date:'dd/MM/yyyy HH:mm'}}<br>
+                {{pub.datep| date:'dd/MM/yyyy HH:mm'}}<br>
                 {{pub.titre}}</div>
             <div id="description">{{pub.description}}</div>
            
@@ -14,7 +14,7 @@
     </div>
     <div id="com">
         <div id="commentaire" *ngFor="let t of pub.commentaires">
-            {{getcurrName(t.ownerid)}}<br> {{t.datec.toDate()| date:'dd/MM/yyyy HH:mm'}}<br>
+            {{getcurrName(t.ownerid)}}<br> {{t.datec| date:'dd/MM/yyyy HH:mm'}}<br>
             {{t.description}}
         </div>
     </div>

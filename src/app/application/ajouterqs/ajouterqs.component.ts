@@ -10,11 +10,12 @@ import {Router,ActivatedRoute} from '@angular/router';
 })
 export class AjouterqsComponent implements OnInit {
   idqcm:string;
+  question:string;
   constructor(private activatedRoute : ActivatedRoute,private qs:QcmService,private router:Router) { }
   onSubmit(form:NgForm)
   {
     let dateqcm=new Date()
-    this.qs.ajouterQuestion(this.idqcm,form.value['question'],form.value['reponse'],form.value['proposition1'],form.value['proposition2'],form.value['proposition3']);
+    this.qs.ajouterQuestion(this.idqcm,this.question,form.value['reponse'],form.value['proposition1'],form.value['proposition2'],form.value['proposition3']);
     this.router.navigate(['/QCMens']); 
   }
 

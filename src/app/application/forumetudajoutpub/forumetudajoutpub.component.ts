@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class ForumetudajoutpubComponent implements OnInit {
   currentensid:string;
+  description:string;
 
   constructor(private us: UserService,private fs:ForumService,private router:Router) { 
     this.us.user.subscribe(user => this.currentensid=user.uid);

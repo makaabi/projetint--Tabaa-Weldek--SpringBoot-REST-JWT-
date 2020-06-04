@@ -6,23 +6,23 @@
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">     
             <div class="form-group">
                 <label for="question">Question:</label>
-                <textarea id="question" name="question" class="form-control" rows="6" [(ngModel)]="description" required></textarea>
+                <textarea  [(ngModel)]="question" id="question" name="question" class="form-control" rows="6"  required></textarea>
             </div>
             <div class="form-group">
                 <label for="reponse">Reponse :</label>
-                <input id="reponse" name="reponse" type="text" [(ngModel)]="reponse" required>
+                <input ngModel id="reponse" name="reponse" type="text" #reponse="ngModel" required>
             </div>
             <div class="form-group">
                 <label for="proposition1">Proposition 1 :</label>
-                <input id="proposition1" name="proposition1" type="text" [(ngModel)]="proposition1" required>
+                <input ngModel id="proposition1" name="proposition1" type="text" #proposition1="ngModel" required>
             </div>
             <div class="form-group">
                 <label for="proposition2">Proposition 2 :</label>
-                <input id="proposition2" name="proposition2" type="text" [(ngModel)]="proposition2" required>
+                <input ngModel id="proposition2" name="proposition2" type="text" #proposition2="ngModel" required>
             </div>
             <div class="form-group">
                 <label for="proposition3">Proposition 3 :</label>
-                <input id="proposition3" name="proposition3" type="text" [(ngModel)]="proposition3" required>
+                <input ngModel id="proposition3" name="proposition3" type="text" #proposition3="ngModel" required>
             </div>
             <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Ajouter</button>
         </form>
